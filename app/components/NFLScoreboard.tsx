@@ -1,4 +1,5 @@
 import Image from "next/image";
+import moment from "moment";
 
 // Type definitions (same as before)
 type Game = {
@@ -66,11 +67,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
               <span className="font-semibold text-lg">
                 {game.status.type.state === "in"
                   ? `Q${game.status.period}`
-                  : new Date(game.date).toLocaleDateString("en-US", {
-                      weekday: "long", // e.g., "Monday"
-                      hour: "numeric",
-                      minute: "numeric",
-                    }) +
+                  : moment.utc(game.date).local().format("dddd h:mm a") +
                     `  ${game.competitions[0]?.broadcasts[0]?.names[0] ?? ""}`}
               </span>
               <span className="text-sm text-gray-600 dark:text-gray-200">
