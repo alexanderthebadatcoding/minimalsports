@@ -34,6 +34,11 @@ type Game = {
       details: string; // Adding the 'details' property here
       // Add any other properties for 'odds' as needed
     }>;
+    broadcasts: Array<{
+      names: Array<{
+        type: string;
+      }>;
+    }>;
   }>;
 };
 
@@ -55,21 +60,20 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
         {games.map((game) => (
           <div
             key={game.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden"
+            className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden"
           >
-            <div className="flex justify-between items-center bg-gray-100 p-3">
+            <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
               <span className="font-semibold text-lg">
                 {game.status.type.state === "in"
                   ? `Q${game.status.period}`
-                  : new Date(game.date).toLocaleDateString(undefined, {
+                  : new Date(game.date).toLocaleDateString("en-US", {
                       weekday: "long", // e.g., "Monday"
-                      month: "long", // e.g., "August"
-                      day: "numeric",
                       hour: "numeric",
                       minute: "numeric",
-                    })}
+                    }) +
+                    `  ${game.competitions[0]?.broadcasts[0]?.names[0] ?? ""}`}
               </span>
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-600 dark:text-gray-200">
                 {game.status.type.state === "pre"
                   ? game.competitions[0]?.odds[0]?.details ||
                     "No odds available"
@@ -94,7 +98,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
                       <span className="font-bold text-lg">
                         {team.team.abbreviation}
                       </span>
-                      <span className="text-sm text-gray-600 block">
+                      <span className="text-sm text-gray-600 dark:text-gray-400 block">
                         {team.records[0].summary}
                       </span>
                     </div>
