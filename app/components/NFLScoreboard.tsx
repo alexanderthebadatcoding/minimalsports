@@ -68,13 +68,18 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
               <span className="font-semibold text-lg">
                 {game.status.type.state === "in"
                   ? `Q${game.status.period}`
+                  : game.status.type.state === "post"
+                  ? "Final"
                   : moment.utc(game.date).local().format("dddd h:mm a") +
                     `  ${game.competitions[0]?.broadcasts[0]?.names[0] ?? ""}`}
               </span>
+
               <span className="text-sm text-gray-600 dark:text-gray-200">
                 {game.status.type.state === "pre"
                   ? game.competitions[0]?.odds[0]?.details ||
                     "No odds available"
+                  : game.status.type.state === "post"
+                  ? ""
                   : game.status.displayClock}
               </span>
             </div>
@@ -105,7 +110,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
                 </div>
               ))}
               {game.competitions[0].situation && (
-                <div className="text-sm text-gray-600 mt-3">
+                <div className="text-med text-gray-600 mt-3">
                   <div>{game.competitions[0].situation.downDistanceText}</div>
                   <div>{game.competitions[0].situation.possessionText}</div>
                 </div>
