@@ -102,7 +102,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
                         {team.team.abbreviation}
                       </span>
                       <span className="text-sm text-gray-600 dark:text-gray-400 block">
-                        {team.records[0].summary}
+                        {team.records?.[0]?.summary}
                       </span>
                     </div>
                   </div>
