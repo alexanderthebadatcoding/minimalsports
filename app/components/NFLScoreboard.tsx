@@ -31,6 +31,8 @@ type Game = {
     situation?: {
       downDistanceText: string;
       possessionText: string;
+      possession: string;
+
     };
     odds: Array<{
       details: string; // Adding the 'details' property here
@@ -47,6 +49,10 @@ type Game = {
 type NFLScoreboardProps = {
   games: Game[];
 };
+const lastPlayText = info.situation && info.situation.lastPlay ? info.situation.lastPlay.text : null;
+console.log(lastPlayText); 
+const possessionTeam = game.possession === game.awayid ? game.awayteam : game.hometeam;
+
 
 export default function NFLScoreboard({ games }: NFLScoreboardProps) {
   if (!games || games.length === 0) {
@@ -111,8 +117,8 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
               ))}
               {game.competitions[0].situation && (
                 <div className="text-med text-gray-600 mt-3">
-                  <div>{game.competitions[0].situation.downDistanceText}</div>
-                  <div>{game.competitions[0].situation.possessionText}</div>
+                  <div>{possessionTeam} {game.competitions[0].situation.downDistanceText}</div>
+                  <div>{lastPlayText}</div>
                 </div>
               )}
             </div>
