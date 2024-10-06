@@ -60,7 +60,7 @@ type Game = {
 type NFLScoreboardProps = {
   games: Game[];
 };
-const lastPlayText = info.situation && info.situation.lastPlay ? info.situation.lastPlay.text : null;
+const lastPlayText = game.situation && game.situation.lastPlay ? game.situation.lastPlay.text : null;
 console.log(lastPlayText); 
 const possessionTeam = game.possession === game.awayid ? game.awayteam : game.hometeam;
 
