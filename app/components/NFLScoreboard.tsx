@@ -60,9 +60,9 @@ type Game = {
 type NFLScoreboardProps = {
   games: Game[];
 };
-const lastPlayText = game.situation && game.situation.lastPlay ? game.situation.lastPlay.text : null;
+const lastPlayText = games.situation && games.situation.lastPlay ? games.situation.lastPlay.text : null;
 console.log(lastPlayText); 
-const possessionTeam = game.possession === game.awayid ? game.awayteam : game.hometeam;
+const possessionTeam = games.possession === games.awayid ? games.awayteam : games.hometeam;
 
 
 export default function NFLScoreboard({ games }: NFLScoreboardProps) {
