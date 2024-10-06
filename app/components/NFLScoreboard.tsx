@@ -32,7 +32,18 @@ type Game = {
       downDistanceText: string;
       possessionText: string;
       possession: string;
-
+      lastPlay?: {
+        id: string;
+        type: {
+          id: string;
+          text: string;
+          };
+        text: string;
+        scoreValue: number;
+        team: {
+        id: string;
+        };
+    };
     };
     odds: Array<{
       details: string; // Adding the 'details' property here
