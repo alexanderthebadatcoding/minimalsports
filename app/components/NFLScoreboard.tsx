@@ -135,7 +135,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
               )}
             </div>
           </div>
-        ))}}
+        )}}
       </div>
     </div>
   );
