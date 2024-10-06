@@ -60,9 +60,6 @@ type Game = {
 type NFLScoreboardProps = {
   games: Game[];
 };
-const lastPlayText = games.situation && games.situation.lastPlay ? games.situation.lastPlay.text : null;
-console.log(lastPlayText); 
-const possessionTeam = games.possession === games.awayid ? games.awayteam : games.hometeam;
 
 
 export default function NFLScoreboard({ games }: NFLScoreboardProps) {
@@ -74,9 +71,13 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">NFL Scoreboard</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">CFB Scoreboard</h1>
       <div className="grid gap-6">
-        {games.map((game) => (
+        {games.map((game) => {
+          const lastPlayText = games.situation && games.situation.lastPlay ? games.situation.lastPlay.text : null;
+          // console.log(lastPlayText); 
+          const possessionTeam = games.possession === games.awayid ? games.awayteam : games.hometeam;
+
           <div
             key={game.id}
             className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden"
@@ -134,7 +135,7 @@ export default function NFLScoreboard({ games }: NFLScoreboardProps) {
               )}
             </div>
           </div>
-        ))}
+        ))}}
       </div>
     </div>
   );
