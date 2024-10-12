@@ -15,6 +15,7 @@ type Game = {
     period: number;
   };
   competitions: Array<{
+    broadcast: string;
     competitors: Array<{
       homeAway: string;
       team: {
@@ -96,7 +97,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
               <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
                 <span className="font-semibold text-lg">
                   {game.status.type.state === "in"
-                    ? `Q${game.status.period}`
+                    ? `${game.status.type.detail}`
                     : game.status.type.state === "post"
                     ? "Final"
                     : moment.utc(game.date).local().format("dddd h:mm a") +
@@ -108,7 +109,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                     ? competition?.odds?.[0]?.details || "No odds available"
                     : game.status.type.state === "post"
                     ? ""
-                    : game.status.displayClock}
+                    : `  ${competition?.broadcast ?? ""}`}
                 </span>
               </div>
               <div className="p-5">
@@ -127,7 +128,10 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                       />
                       <div>
                         <span className="font-bold text-lg">
-                          {team.team.abbreviation}
+                          {team.team.abbreviation}{" "}
+                          {situation?.possession !== team.team.id
+                            ? " "
+                            : " 🏈 "}
                         </span>
                         <span className="text-sm text-gray-600 dark:text-gray-400 block">
                           {team.records?.[0]?.summary}
@@ -140,12 +144,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
 
                 {situation && (
                   <div className="text-lg text-gray-600 mt-3">
-                    <div>
-                      {possessionTeamAbbreviation !== "Unknown"
-                        ? possessionTeamAbbreviation
-                        : ""}{" "}
-                      {situation.downDistanceText}
-                    </div>
+                    <div>{situation.downDistanceText}</div>
                     <div>{situation.lastPlay?.text || ""}</div>
                   </div>
                 )}
