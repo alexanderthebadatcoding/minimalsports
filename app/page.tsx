@@ -1,7 +1,7 @@
 import Image from "next/image";
 // pages/_app.js
 import "./globals.css";
-import NFLScoreboard from "./components/NFLScoreboard";
+import Scoreboard from "./components/Scoreboard";
 
 async function getScores() {
   const res = await fetch(
@@ -17,5 +17,5 @@ async function getScores() {
 export default async function Home() {
   const data = await getScores();
 
-  return <NFLScoreboard games={data.events} />;
+  return <Scoreboard games={data.events} />;
 }

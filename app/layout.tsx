@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NFL Scores",
+  title: "Scores",
   description: "Minimal Scoreboard created by Gilbster",
 };
 
