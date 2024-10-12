@@ -100,9 +100,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                     : game.status.type.state === "post"
                     ? "Final"
                     : moment.utc(game.date).local().format("dddd h:mm a") +
-                      `  ${
-                        competition?.broadcasts?.[0]?.names?.[0]?.type ?? ""
-                      }`}
+                      `  ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
                 </span>
 
                 <span className="text-sm text-gray-600 dark:text-gray-200">
@@ -148,9 +146,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                         : ""}{" "}
                       {situation.downDistanceText}
                     </div>
-                    <div>
-                      {situation.lastPlay?.text || "No last play available"}
-                    </div>
+                    <div>{situation.lastPlay?.text || ""}</div>
                   </div>
                 )}
               </div>
