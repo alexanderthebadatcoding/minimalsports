@@ -145,7 +145,7 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                     <div>
                       {possessionTeamAbbreviation !== "Unknown"
                         ? possessionTeamAbbreviation
-                        : "No team found"}{" "}
+                        : ""}{" "}
                       {situation.downDistanceText}
                     </div>
                     <div>
