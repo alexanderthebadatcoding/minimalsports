@@ -30,6 +30,9 @@ type Game = {
         type: string;
         summary: string;
       }>;
+      curatedRank?: {
+        current: string;
+      };
     }>;
     situation?: {
       downDistanceText: string;
@@ -129,6 +132,12 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                       <div>
                         <span className="font-bold text-lg">
                           {team.team.abbreviation}{" "}
+                          <p className="text-gray-600 dark:text-gray-400 font-medium inline">
+                            {team.curatedRank &&
+                            Number(team.curatedRank.current) < 30
+                              ? team.curatedRank.current
+                              : ""}{" "}
+                          </p>
                           {situation?.possession !== team.team.id
                             ? " "
                             : " 🏈 "}
