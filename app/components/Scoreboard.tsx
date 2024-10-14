@@ -16,6 +16,11 @@ type Game = {
   };
   competitions: Array<{
     broadcast: string;
+    series?: {
+      type: string;
+      title: string;
+      summary: string;
+    };
     competitors: Array<{
       homeAway: string;
       team: {
@@ -54,7 +59,7 @@ type Game = {
   }>;
 };
 
-type NFLScoreboardProps = {
+type ScoreboardProps = {
   games: Game[];
 };
 
@@ -71,7 +76,7 @@ function findTeamAbbreviation(
   return "Unknown"; // Return "Unknown" if no match found
 }
 
-export default function Scoreboard({ games }: NFLScoreboardProps) {
+export default function Scoreboard({ games }: ScoreboardProps) {
   if (!games || games.length === 0) {
     return (
       <div className="text-center mt-10">No games available at the moment.</div>
@@ -103,8 +108,12 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                     ? `${game.status.type.detail}`
                     : game.status.type.state === "post"
                     ? "Final"
+                    : moment.utc(game.date).local().isSame(moment(), "day")
+                    ? `${moment.utc(game.date).local().format("h:mm a")} ${
+                        competition?.broadcasts?.[0]?.names?.[0] ?? ""
+                      }`
                     : moment.utc(game.date).local().format("dddd h:mm a") +
-                      `  ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
+                      ` ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
                 </span>
 
                 <span className="text-sm text-gray-600 dark:text-gray-200">
@@ -155,6 +164,11 @@ export default function Scoreboard({ games }: NFLScoreboardProps) {
                   <div className="text-lg text-gray-600 mt-3">
                     <div>{situation.downDistanceText}</div>
                     <div>{situation.lastPlay?.text || ""}</div>
+                  </div>
+                )}
+                {competition.series && (
+                  <div className="text-lg text-gray-600 mt-3">
+                    <div>{competition.series.summary || ""}</div>
                   </div>
                 )}
               </div>
