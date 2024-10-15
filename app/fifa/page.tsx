@@ -17,7 +17,7 @@ const fetcher = async (url: string) => {
 export default function NewPage() {
   // Remove typeof window check for testing
   const { data, error } = useSWR(
-    "http://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard",
+    "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard",
     fetcher,
     {
       refreshInterval: 60000, // Re-fetch data every 60 seconds
