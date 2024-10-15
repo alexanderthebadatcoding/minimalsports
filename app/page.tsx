@@ -12,6 +12,7 @@ export default function Home() {
     { name: "MLS", path: "/mls" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "Baseball", path: "/mlb" },
+    { name: "UEFA Nations League", path: "/soccer" },
 
     // Add more pages as needed
   ];
