@@ -17,10 +17,10 @@ const fetcher = async (url: string) => {
 export default function NewPage() {
   // Remove typeof window check for testing
   const { data, error } = useSWR(
-    "http://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+    "http://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard",
     fetcher,
     {
-      refreshInterval: 15000, // Re-fetch data every 15 seconds
+      refreshInterval: 60000, // Re-fetch data every 60 seconds
     }
   );
 
@@ -32,7 +32,7 @@ export default function NewPage() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">College Football</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">FIFA Friendlies</h1>
       <Scoreboard games={data.events} />
     </div>
   );

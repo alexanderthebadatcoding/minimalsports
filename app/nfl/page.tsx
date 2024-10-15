@@ -5,7 +5,7 @@ import Scoreboard from "../components/Scoreboard";
 
 async function getAnotherScores() {
   const res = await fetch(
-    "http://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+    "http://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
     { next: { revalidate: 60 } }
   );
   if (!res.ok) {
@@ -19,7 +19,7 @@ export default async function NewPage() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">Baseball</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">NFL</h1>
       <Scoreboard games={data.events} />
     </div>
   );

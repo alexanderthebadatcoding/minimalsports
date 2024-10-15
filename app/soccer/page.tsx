@@ -1,51 +1,40 @@
 // pages/new-page.tsx
+"use client";
+import useSWR from "swr"; // Correct import
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 import Scoreboard from "../components/Scoreboard";
 
-export const metadata: Metadata = {
-  title: "Soccer Scores",
-  description: "Minimal Scoreboard for Soccer Scores", // Fixed the typo in "for"
-  keywords: ["Soccer", "Scores", "Soccer", "UEFA Soccer", "Sports Scores"],
-  robots: "index, follow", // Allows search engines to index and follow links on this page
-  openGraph: {
-    title: "Soccer Scores",
-    description: "Live updates and results from the Soccer games.",
-    // url: "https://example.com/Soccer-scores", // Replace with the actual URL of your page
-    type: "website",
-    images: [
-      {
-        url: "https://a.espncdn.com/i/leaguelogos/soccer/500/2395.png", // Replace with an actual image URL
-        alt: "Soccer Scoreboard",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image", // Better for sharing a page with an image
-    title: "Soccer Scores",
-    description: "Get live updates for Soccer games.",
-    images: ["https://a.espncdn.com/i/leaguelogos/soccer/500/2395.png"], // Replace with the actual image URL
-  },
-};
-
-async function getAnotherScores() {
-  const res = await fetch(
-    "http://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard",
-    { next: { revalidate: 60 } }
-  );
+const fetcher = async (url: string) => {
+  const res = await fetch(url);
   if (!res.ok) {
-    throw new Error("Failed to fetch scores");
+    throw new Error("Failed to fetch");
   }
   return res.json();
-}
+};
 
-export default async function NewPage() {
-  const data = await getAnotherScores();
+export default function NewPage() {
+  // Remove typeof window check for testing
+  const { data, error } = useSWR(
+    "http://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard",
+    fetcher,
+    {
+      refreshInterval: 15000, // Re-fetch data every 60 seconds
+    }
+  );
+
+  // console.log("Data:", data);
+  // console.log("Error:", error);
+
+  if (error) return <div>Failed to load scores</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="w-full max-w-4xl mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        UEFA Nations League
+      </h1>
       <Scoreboard games={data.events} />
     </div>
   );
