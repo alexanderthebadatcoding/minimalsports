@@ -69,15 +69,23 @@ export default function ResultPage() {
       "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard";
     title = "Concacaf Nations League";
   } else {
-    return (
-      <div className="text-3xl font-bold mx-auto text-center mt-16">
-        Invalid Sport
-      </div>
-    );
+    apiUrl = null;
+    title = "Invalid Sport Type";
   }
 
   // Use SWR to fetch data
   const { data, error } = useSWR(apiUrl, fetcher, { refreshInterval: 60000 });
+  // Handle loading and error states
+  if (!apiUrl) {
+    return (
+      <>
+        <div className="text-3xl font-bold mx-auto text-center my-16">
+          Invalid Sport
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   if (error)
     return (
