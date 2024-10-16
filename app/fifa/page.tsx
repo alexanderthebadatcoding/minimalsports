@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Scoreboard from "../components/Scoreboard";
+import Footer from "../components/Footer";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url);
@@ -31,9 +32,12 @@ export default function NewPage() {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">FIFA Friendlies</h1>
-      <Scoreboard games={data.events} />
-    </div>
+    <>
+      <div className="w-full max-w-4xl mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-6 text-center">FIFA Friendlies</h1>
+        <Scoreboard games={data.events} />
+      </div>
+      <Footer />
+    </>
   );
 }

@@ -56,6 +56,7 @@ type Game = {
         type: string;
       }>;
     }>;
+    outsText: string;
   }>;
 };
 
@@ -100,7 +101,9 @@ export default function Scoreboard({ games }: ScoreboardProps) {
             <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
               <span className="font-semibold text-lg">
                 {game.status.type.state === "in"
-                  ? `${game.status.type.detail}`
+                  ? `${game.status.type.detail} ${" "} ${
+                      competition?.outsText || ""
+                    }`
                   : game.status.type.state === "post"
                   ? "Final"
                   : moment.utc(game.date).local().isSame(moment(), "day")
@@ -113,7 +116,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
 
               <span className="text-sm text-gray-600 dark:text-gray-200">
                 {game.status.type.state === "pre"
-                  ? competition?.odds?.[0]?.details || "No odds available"
+                  ? competition?.odds?.[0]?.details || ""
                   : game.status.type.state === "post"
                   ? ""
                   : `  ${competition?.broadcast ?? ""}`}

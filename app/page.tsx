@@ -6,12 +6,13 @@ import Link from "next/link";
 export default function Home() {
   const pages = [
     { name: "NFL", path: "/nfl" },
-    { name: "NHL", path: "/nhl" },
     { name: "NCAA Football", path: "/cfb" },
-    { name: "NWSL", path: "/nwsl" },
+    { name: "MLB", path: "/mlb" },
+    { name: "NBA", path: "/nba" },
+    { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
+    { name: "NWSL", path: "/nwsl" },
     { name: "FIFA Friendlies", path: "/fifa" },
-    { name: "Baseball", path: "/mlb" },
     { name: "UEFA Nations League", path: "/soccer" },
 
     // Add more pages as needed

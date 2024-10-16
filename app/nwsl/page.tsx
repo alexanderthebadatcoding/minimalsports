@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import Scoreboard from "../components/Scoreboard";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "NWSL Scores",
@@ -45,9 +46,12 @@ export default async function NewPage() {
   const data = await getAnotherScores();
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">NWSL</h1>
-      <Scoreboard games={data.events} />
-    </div>
+    <>
+      <div className="w-full max-w-4xl mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-6 text-center">NWSL</h1>
+        <Scoreboard games={data.events} />
+      </div>
+      <Footer />
+    </>
   );
 }
