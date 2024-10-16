@@ -16,9 +16,8 @@ export default function Home() {
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
-    { name: "UEFA Nations League", path: "/soccer" },
+    { name: "UEFA Nations League", path: "/uefa" },
     { name: "Concacaf Nations League", path: "/concacaf" },
-
     // Add more pages as needed
   ];
 
