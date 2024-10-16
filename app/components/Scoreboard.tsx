@@ -85,96 +85,103 @@ export default function Scoreboard({ games }: ScoreboardProps) {
   }
 
   return (
-    <div className="grid gap-6">
-      {games.map((game) => {
-        const competition = game.competitions?.[0]; // Safely access the first competition
-        const situation = competition?.situation;
-        const possessionTeamAbbreviation = situation
-          ? findTeamAbbreviation(competition.competitors, situation.possession)
-          : null;
+    <main>
+      <div className="grid gap-6">
+        {games.map((game) => {
+          const competition = game.competitions?.[0]; // Safely access the first competition
+          const situation = competition?.situation;
+          const possessionTeamAbbreviation = situation
+            ? findTeamAbbreviation(
+                competition.competitors,
+                situation.possession
+              )
+            : null;
 
-        return (
-          <div
-            key={game.id}
-            className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden"
-          >
-            <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
-              <span className="font-semibold text-lg">
-                {game.status.type.state === "in"
-                  ? `${game.status.type.detail} ${" "} ${
-                      competition?.outsText || ""
-                    }`
-                  : game.status.type.state === "post"
-                  ? "Final"
-                  : moment.utc(game.date).local().isSame(moment(), "day")
-                  ? `${moment.utc(game.date).local().format("h:mm a")} ${
-                      competition?.broadcasts?.[0]?.names?.[0] ?? ""
-                    }`
-                  : moment.utc(game.date).local().format("dddd h:mm a") +
-                    ` ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
-              </span>
+          return (
+            <div
+              key={game.id}
+              className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden"
+            >
+              <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
+                <span className="font-semibold text-lg">
+                  {game.status.type.state === "in"
+                    ? `${game.status.type.detail} ${" "} ${
+                        competition?.outsText || ""
+                      }`
+                    : game.status.type.state === "post"
+                    ? "Final"
+                    : moment.utc(game.date).local().isSame(moment(), "day")
+                    ? `${moment.utc(game.date).local().format("h:mm a")} ${
+                        competition?.broadcasts?.[0]?.names?.[0] ?? ""
+                      }`
+                    : moment.utc(game.date).local().format("dddd h:mm a") +
+                      ` ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
+                </span>
 
-              <span className="text-sm text-gray-600 dark:text-gray-200">
-                {game.status.type.state === "pre"
-                  ? competition?.odds?.[0]?.details || ""
-                  : game.status.type.state === "post"
-                  ? ""
-                  : `  ${competition?.broadcast ?? ""}`}
-              </span>
-            </div>
-            <div className="p-5">
-              {competition?.competitors?.map((team) => (
-                <div
-                  key={team.homeAway}
-                  className="flex justify-between items-center mb-4"
-                >
-                  <div className="flex items-center">
-                    <Image
-                      src={team.team.logo}
-                      alt={`${team.team.displayName} logo`}
-                      width={48}
-                      height={48}
-                      className="mr-3"
-                    />
-                    <div>
-                      <span className="font-bold text-lg">
-                        {team.team.abbreviation}{" "}
-                        <p className="text-gray-600 dark:text-gray-400 font-medium inline">
-                          {team.curatedRank &&
-                          Number(team.curatedRank.current) < 30
-                            ? team.curatedRank.current
-                            : ""}{" "}
-                        </p>
-                        {situation?.possession !== team.team.id ? " " : " 🏈 "}
-                      </span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400 block">
-                        {team.records?.[0]?.summary}
+                <span className="text-sm text-gray-600 dark:text-gray-200">
+                  {game.status.type.state === "pre"
+                    ? competition?.odds?.[0]?.details || ""
+                    : game.status.type.state === "post"
+                    ? ""
+                    : `  ${competition?.broadcast ?? ""}`}
+                </span>
+              </div>
+              <div className="p-5">
+                {competition?.competitors?.map((team) => (
+                  <div
+                    key={team.homeAway}
+                    className="flex justify-between items-center mb-4"
+                  >
+                    <div className="flex items-center">
+                      <Image
+                        src={team.team.logo}
+                        alt={`${team.team.displayName} logo`}
+                        width={48}
+                        height={48}
+                        className="mr-3"
+                      />
+                      <div>
+                        <span className="font-bold text-lg">
+                          {team.team.shortDisplayName}{" "}
+                          <p className="text-gray-600 dark:text-gray-400 font-medium inline">
+                            {team.curatedRank &&
+                            Number(team.curatedRank.current) < 30
+                              ? team.curatedRank.current
+                              : ""}{" "}
+                          </p>
+                          {situation?.possession !== team.team.id
+                            ? " "
+                            : " 🏈 "}
+                        </span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400 block">
+                          {team.records?.[0]?.summary}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex justify-center items-center">
+                      <span className="text-2xl font-semibold text-center">
+                        {team.score}
                       </span>
                     </div>
                   </div>
-                  <div className="flex justify-center items-center">
-                    <span className="text-2xl font-semibold text-center">
-                      {team.score}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                ))}
 
-              {situation && (
-                <div className="text-lg text-gray-600 mt-3">
-                  <div>{situation.downDistanceText}</div>
-                  <div>{situation.lastPlay?.text || ""}</div>
-                </div>
-              )}
-              {competition.series && (
-                <div className="text-lg text-gray-600 mt-3">
-                  <div>{competition.series.summary || ""}</div>
-                </div>
-              )}
+                {situation && (
+                  <div className="text-lg text-gray-600 mt-3">
+                    <div>{situation.downDistanceText}</div>
+                    <div>{situation.lastPlay?.text || ""}</div>
+                  </div>
+                )}
+                {competition.series && (
+                  <div className="text-lg text-gray-600 mt-3">
+                    <div>{competition.series.summary || ""}</div>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </main>
   );
 }

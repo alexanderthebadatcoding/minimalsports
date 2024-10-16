@@ -9,11 +9,15 @@ export default function Home() {
     { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
     { name: "NBA", path: "/nba" },
+    { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
+    { name: "Bundesliga", path: "/bundesliga" },
+    { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "UEFA Nations League", path: "/soccer" },
+    { name: "Concacaf Nations League", path: "/concacaf" },
 
     // Add more pages as needed
   ];
