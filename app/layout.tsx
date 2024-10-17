@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Scoreb.site",
+  title: "Minimalist scoreboard for multiple sports",
   description: "Minimal Scoreboard created by Gilbster",
 };
 
