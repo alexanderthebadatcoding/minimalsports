@@ -27,7 +27,7 @@ export default function TeamPage() {
 
   // Construct the API URL based on the abbreviation
   const apiUrl = abbreviation
-    ? `http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`
+    ? `https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`
     : null;
 
   // Always call the useSWR hook
