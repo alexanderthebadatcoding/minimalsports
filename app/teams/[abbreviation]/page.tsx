@@ -1,5 +1,4 @@
 "use client";
-
 import Footer from "@/app/components/Footer";
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -26,18 +25,18 @@ export default function TeamPage() {
     ? params.abbreviation[0] // If it's an array, take the first element
     : params.abbreviation; // If it's a string, use it directly
 
-  // Only proceed if abbreviation is a string
-  if (typeof abbreviation !== "string") {
-    return <div>Error: Invalid team abbreviation.</div>;
-  }
-
   // Construct the API URL based on the abbreviation
   const apiUrl = abbreviation
     ? `http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`
     : null;
 
-  // Use SWR to fetch team data
+  // Always call the useSWR hook
   const { data, error } = useSWR(apiUrl, fetcher, { refreshInterval: 60000 });
+
+  // Only proceed if abbreviation is a string
+  if (typeof abbreviation !== "string") {
+    return <div>Error: Invalid team abbreviation.</div>;
+  }
 
   // If error is 400, display "Team not found"
   if (error?.message === "Team not found") {
