@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import moment from "moment";
 import useSWR from "swr";
+import { Key } from "react";
 
 // Fetcher function to handle API calls and error responses
 const fetcher = async (url: string) => {
@@ -31,7 +32,9 @@ export default function TeamPage() {
   }
 
   // Construct the API URL based on the abbreviation
-  const apiUrl = `http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`;
+  const apiUrl = abbreviation
+    ? `http://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`
+    : null;
 
   // Use SWR to fetch team data
   const { data, error } = useSWR(apiUrl, fetcher, { refreshInterval: 60000 });
@@ -74,10 +77,12 @@ export default function TeamPage() {
       <div className="max-w-4xl mx-auto p-6">
         {data.team?.logos?.[0]?.href && (
           <div className="flex justify-center mt-6">
-            <img
+            <Image
               src={data.team.logos[0].href}
               alt={`${data.team.displayName} logo`}
-              className="h-40 w-40 object-contain"
+              width={124}
+              height={124}
+              className="object-contain"
             />
           </div>
         )}
@@ -108,77 +113,92 @@ export default function TeamPage() {
             <p className="mb-2">{data.team.standingSummary}</p>
           </div>
         </div>
-        {data.team?.nextEvent?.[0]?.competitions?.map((competition, index) => (
-          <div
-            key={index}
-            className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden mt-6"
-          >
-            {/* Header Section */}
-            <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
-              <span className="font-semibold text-xl">
-                {competition.status.type.state === "in"
-                  ? `${competition.status.type.detail}`
-                  : competition.status.type.state === "post"
-                  ? "Final"
-                  : moment.utc(competition.date).local().isSame(moment(), "day")
-                  ? `${moment.utc(competition.date).local().format("h:mm a")}`
-                  : moment
-                      .utc(competition.date)
-                      .local()
-                      .diff(moment(), "days") > 5
-                  ? moment
-                      .utc(competition.date)
-                      .local()
-                      .format("MM/DD dddd h:mm a")
-                  : moment.utc(competition.date).local().format("dddd h:mm a")}
-              </span>
+        {data.team?.nextEvent?.[0]?.competitions?.map(
+          (
+            competition: {
+              status: { type: { state: string; detail: any } };
+              date: moment.MomentInput;
+              competitors: any[];
+            },
+            index: Key | null | undefined
+          ) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden mt-6"
+            >
+              {/* Header Section */}
+              <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
+                <span className="font-semibold text-xl">
+                  {competition.status.type.state === "in"
+                    ? `${competition.status.type.detail}`
+                    : competition.status.type.state === "post"
+                    ? "Final"
+                    : moment
+                        .utc(competition.date)
+                        .local()
+                        .isSame(moment(), "day")
+                    ? `${moment.utc(competition.date).local().format("h:mm a")}`
+                    : moment
+                        .utc(competition.date)
+                        .local()
+                        .diff(moment(), "days") > 5
+                    ? moment
+                        .utc(competition.date)
+                        .local()
+                        .format("MM/DD dddd h:mm a")
+                    : moment
+                        .utc(competition.date)
+                        .local()
+                        .format("dddd h:mm a")}
+                </span>
 
-              <span className="text-gray-600 dark:text-gray-200">{week}</span>
-            </div>
+                <span className="text-gray-600 dark:text-gray-200">{week}</span>
+              </div>
 
-            {/* Body Section */}
-            <div className="p-5 flex flex-row justify-around content-center">
-              {competition?.competitors?.map((team) => (
-                <div
-                  key={team.homeAway}
-                  className="flex justify-between items-center"
-                >
-                  <div className="flex-row items-center">
-                    <Image
-                      src={team.team.logos[0].href}
-                      alt={`${team.team.displayName} logo`}
-                      width={100}
-                      height={100}
-                    />
-                    <div className="text-center">
-                      <span className="font-bold text-lg ">
-                        {team.team.shortDisplayName}{" "}
-                        <p className="text-gray-600 dark:text-gray-400 font-medium inline">
-                          {team.curatedRank &&
-                          Number(team.curatedRank.current) < 30
-                            ? team.curatedRank.current
-                            : ""}{" "}
-                        </p>
-                      </span>
+              {/* Body Section */}
+              <div className="p-5 flex flex-row justify-around content-center">
+                {competition?.competitors?.map((team) => (
+                  <div
+                    key={team.homeAway}
+                    className="flex justify-between items-center"
+                  >
+                    <div className="flex-row items-center">
+                      <Image
+                        src={team.team.logos[0].href}
+                        alt={`${team.team.displayName} logo`}
+                        width={100}
+                        height={100}
+                      />
+                      <div className="text-center">
+                        <span className="font-bold text-lg ">
+                          {team.team.shortDisplayName}{" "}
+                          <p className="text-gray-600 dark:text-gray-400 font-medium inline">
+                            {team.curatedRank &&
+                            Number(team.curatedRank.current) < 30
+                              ? team.curatedRank.current
+                              : ""}{" "}
+                          </p>
+                        </span>
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+              <div className="text-lg p-5 text-center">
+                <div>
+                  <a
+                    href={GamecastURL} // Assuming the structure holds true
+                    target="_blank" // Opens link in a new tab
+                    rel="noopener noreferrer" // Security measure
+                    className="text-blue-600 hover:underline"
+                  >
+                    View Game on ESPN
+                  </a>
                 </div>
-              ))}
-            </div>
-            <div className="text-lg p-5 text-center">
-              <div>
-                <a
-                  href={GamecastURL} // Assuming the structure holds true
-                  target="_blank" // Opens link in a new tab
-                  rel="noopener noreferrer" // Security measure
-                  className="text-blue-600 hover:underline"
-                >
-                  View Game on ESPN
-                </a>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
 
       <Footer />
