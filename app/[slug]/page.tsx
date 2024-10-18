@@ -60,6 +60,10 @@ export default function ResultPage() {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard";
     title = "FIFA Friendlies";
+  } else if (slug === "fifaw") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly.w/scoreboard";
+    title = "FIFA Womens Friendlies";
   } else if (slug === "uefa") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard";
