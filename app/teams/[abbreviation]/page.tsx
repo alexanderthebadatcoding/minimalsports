@@ -68,8 +68,8 @@ export default function TeamPage() {
   const teamRecordSummary =
     data.team?.record?.items?.[0]?.summary || "No record available";
 
-  const GamecastURL = data.team.nextEvent[0].links[0].href;
-  const week = data.team.nextEvent[0].week.text;
+  const GamecastURL = data.team.nextEvent[0]?.links[0].href;
+  const week = data.team.nextEvent[0]?.week.text;
 
   return (
     <>
