@@ -6,7 +6,7 @@ export const runtime = "experimental-edge";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const title = searchParams.get("title") || "Default Title";
+  const title = searchParams.get("title") || "Sports";
 
   return new ImageResponse(
     (

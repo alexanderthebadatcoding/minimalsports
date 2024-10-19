@@ -19,7 +19,7 @@ export async function generateMetadata({
     title: `${slug.toUpperCase()} on ScoreB`,
     description: `Live scores and updates for ${title}`,
     openGraph: {
-      title: `${slug} Scoreboard`,
+      title: `${slug.toUpperCase()} Scoreboard`,
       description: `Live scores and updates for ${title}`,
       images: [
         {
