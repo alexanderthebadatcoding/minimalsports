@@ -1,84 +1,44 @@
 "use client";
 
-import { useParams } from "next/navigation"; // Import useParams from next/navigation
+import { useEffect } from "react";
+import { useRouter, useParams } from "next/navigation"; // Import useParams from next/navigation
 import useSWR from "swr";
 import Scoreboard from "@/app/components/Scoreboard";
 import Footer from "@/app/components/Footer";
+import { getSportData } from "@/lib/getSportData";
 
 // Fetcher function for SWR
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function ResultPage() {
-  const params = useParams(); // Using useParams to get the slug
-  const slug = params.slug;
+export default function ResultPage({
+  params,
+}: {
+  params: { slug: string | string[] };
+}) {
+  // const params = useParams(); // Using useParams to get the slug
+  const router = useRouter(); // Initialize the router
+  // const slug = params.slug;
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
 
-  // Define the API URL and custom title based on slug
-  let apiUrl;
-  let title;
-
-  if (slug === "nba") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard";
-    title = "NBA"; // Custom title
-  } else if (slug === "wnba") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
-    title = "WNBA"; // Custom title
-  } else if (slug === "nfl") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard";
-    title = "NFL"; // Custom title
-  } else if (slug === "cfb") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard";
-    title = "College Football"; // Custom title
-  } else if (slug === "nhl") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard";
-    title = "NHL"; // Custom title
-  } else if (slug === "mlb") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard";
-    title = "MLB Scoreboard"; // Custom title
-  } else if (slug === "mls") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard";
-    title = "MLS"; // Custom title
-  } else if (slug === "nwsl") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.nwsl/scoreboard";
-    title = "NWSL"; // Custom title
-  } else if (slug === "bundesliga") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard";
-    title = "Bundesliga"; // Custom title
-  } else if (slug === "epl") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard";
-    title = "English Premier League";
-  } else if (slug === "fifa") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard";
-    title = "FIFA Friendlies";
-  } else if (slug === "fifaw") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly.w/scoreboard";
-    title = "FIFA Womens Friendlies";
-  } else if (slug === "uefa") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard";
-    title = "UEFA Nations League";
-  } else if (slug === "concacaf") {
-    apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard";
-    title = "Concacaf Nations League";
-  } else {
-    apiUrl = null;
-    title = "Invalid Sport Type";
-  }
+  const { apiUrl, title } = getSportData(slug);
 
   // Use SWR to fetch data
   const { data, error } = useSWR(apiUrl, fetcher, { refreshInterval: 60000 });
+  useEffect(() => {
+    // Function to intercept back button and redirect to "/"
+    const handlePopState = () => {
+      router.push("/"); // Always navigate to the homepage on back button
+    };
+
+    // Add an event listener to listen for the popstate event (browser back button)
+    window.addEventListener("popstate", handlePopState);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [router]);
+
   // Handle loading and error states
   if (!apiUrl) {
     return (

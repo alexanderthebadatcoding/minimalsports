@@ -21,6 +21,7 @@ type Game = {
       title: string;
       summary: string;
     };
+    notes?: Array<{ headline: string }>;
     competitors: Array<{
       homeAway: string;
       team: {
@@ -109,7 +110,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                         competition?.outsText || ""
                       }`
                     : game.status.type.state === "post"
-                    ? "Final"
+                    ? `${competition?.notes?.[0]?.headline ?? "Final"}`
                     : moment.utc(game.date).local().isSame(moment(), "day")
                     ? `${moment.utc(game.date).local().format("h:mm a")} ${
                         competition?.broadcasts?.[0]?.names?.[0] ?? ""

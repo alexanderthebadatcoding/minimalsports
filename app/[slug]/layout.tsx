@@ -2,34 +2,43 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import type { Viewport } from "next";
-
-export const viewport: Viewport = {
-  themeColor: "#18181b",
-};
+import { getSportData } from "@/lib/getSportData";
 
 const inter = Inter({ subsets: ["latin"] });
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { slug } = params;
+  const { title } = getSportData(slug);
+
+  const ogImageUrl = `/api/og/${slug}?title=${encodeURIComponent(title)}`;
+
+  return {
+    title: `${slug.toUpperCase()} on ScoreB`,
+    description: `Live scores and updates for ${title}`,
+    openGraph: {
+      title: `${slug} Scoreboard`,
+      description: `Live scores and updates for ${title}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${title} Scoreboard`,
+        },
+      ],
+    },
+  };
+}
 
 export default function SlugLayout({
   children,
-  params, // Next.js passes the dynamic route parameters here
+  params,
 }: {
   children: React.ReactNode;
-  params: { slug: string }; // Define the type of params
+  params: { slug: string };
 }) {
-  const { slug } = params;
-
-  return (
-    <html lang="en">
-      <head>
-        <title>{`${slug.toUpperCase()} Scoreboard`}</title>
-        <meta
-          name="description"
-          content={`Live scores and updates for ${slug}`}
-        />
-      </head>
-
-      <body className={inter.className}>{children} </body>
-    </html>
-  );
+  return <div>{children}</div>;
 }
