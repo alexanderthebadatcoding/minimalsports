@@ -3,7 +3,7 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: "edge",
+  runtime: "experimental-edge",
 };
 
 export async function GET(request: NextRequest) {
