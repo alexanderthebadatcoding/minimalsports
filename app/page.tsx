@@ -17,8 +17,8 @@ export default function Home() {
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
-    { name: "UEFA Nations League", path: "/uefa" },
-    { name: "Concacaf Nations League", path: "/concacaf" },
+    // { name: "UEFA Nations League", path: "/uefa" },
+    // { name: "Concacaf Nations League", path: "/concacaf" },
     // Add more pages as needed
   ];
 
@@ -36,7 +36,7 @@ export default function Home() {
             <li key={page.path}>
               <Link
                 href={page.path}
-                className="text-blue-600 hover:underline text-lg"
+                className="text-blue-600 hover:underline text-xl"
               >
                 {page.name}
               </Link>
