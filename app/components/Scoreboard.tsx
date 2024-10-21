@@ -16,6 +16,9 @@ type Game = {
   };
   competitions: Array<{
     broadcast: string;
+    headlines?: Array<{
+      shortLinkText: string;
+    }>;
     series?: {
       type: string;
       title: string;
@@ -86,8 +89,8 @@ export default function Scoreboard({ games }: ScoreboardProps) {
   }
 
   return (
-    <main>
-      <div className="grid gap-6">
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
         {games.map((game) => {
           const competition = game.competitions?.[0]; // Safely access the first competition
           const situation = competition?.situation;
@@ -101,7 +104,9 @@ export default function Scoreboard({ games }: ScoreboardProps) {
           return (
             <div
               key={game.id}
-              className="bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden"
+              className={`bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden ${
+                games.length === 1 || games.length < 5 ? "col-span-2" : ""
+              }`}
             >
               <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
                 <span className="font-semibold text-lg">
@@ -127,7 +132,11 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     : `  ${competition?.broadcast ?? ""}`}
                 </span>
               </div>
-              <div className="p-5">
+              <div
+                className={`pt-6 px-5 ${
+                  game.status.type.state === "pre" ? "flex justify-around" : ""
+                }`}
+              >
                 {competition?.competitors?.map((team) => (
                   <div
                     key={team.homeAway}
@@ -135,7 +144,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                   >
                     <div className="flex items-center">
                       <Image
-                        src={team.team.logo}
+                        src={team.team.logo || "/na.png"}
                         alt={`${team.team.displayName} logo`}
                         width={48}
                         height={48}
@@ -161,12 +170,13 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     </div>
                     <div className="flex justify-center items-center">
                       <span className="text-2xl font-semibold text-center">
-                        {team.score}
+                        {game.status.type.state !== "pre" ? team.score : ""}
                       </span>
                     </div>
                   </div>
                 ))}
-
+              </div>
+              <div className="flex justify-center items-center pb-5 px-3 text-center">
                 {situation && (
                   <div className="text-lg text-gray-600 mt-3">
                     <div>{situation.downDistanceText}</div>
@@ -178,11 +188,16 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     <div>{competition.series.summary || ""}</div>
                   </div>
                 )}
+                {competition.headlines && (
+                  <div className="text-lg text-gray-600 mt-3">
+                    <div>{competition.headlines[0]?.shortLinkText}</div>
+                  </div>
+                )}
               </div>
             </div>
           );
         })}
       </div>
-    </main>
+    </section>
   );
 }

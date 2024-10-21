@@ -64,7 +64,7 @@ export default function ResultPage({
 
   return (
     <>
-      <div className="w-full max-w-4xl mx-auto p-4">
+      <div className="w-full max-w-6xl mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6 text-center">{title}</h1>
         <Scoreboard games={data.events} />
       </div>
