@@ -24,31 +24,42 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center  shadow-md rounded-lg overflow-hidden p-4">
-      <header className="text-center space-y-2">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-200">
-          ScoreB.site
-        </h1>
-        <p className="text-gray-600 dark:text-slate-300">
-          Choose a sport to view live scores
-        </p>
-      </header>
+    <>
+      <main className="min-h-screen flex flex-col items-center justify-center  shadow-md rounded-lg overflow-hidden p-4">
+        <header className="text-center space-y-2">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-200">
+            ScoreB.site
+          </h1>
+          <p className="text-gray-600 dark:text-slate-300">
+            Choose a sport to view live scores
+          </p>
+        </header>
 
-      <div className="items-center p-6 w-full max-w-md">
-        <ul className="space-y-3">
-          {pages.map((page) => (
-            <li key={page.path}>
-              <Link
-                href={page.path}
-                className="w-full justify-between text-lg font-medium bg-white dark:bg-slate-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 px-4 py-2 border rounded-md flex items-center"
-              >
-                {page.name}
-                <ChevronRight className="h-5 w-5 text-gray-400" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </main>
+        <div className="items-center p-6 w-full max-w-md">
+          <ul className="space-y-3">
+            {pages.map((page) => (
+              <li key={page.path}>
+                <Link
+                  href={page.path}
+                  className="w-full justify-between text-lg font-medium bg-white dark:bg-slate-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 px-4 py-2 border rounded-md flex items-center"
+                >
+                  {page.name}
+                  <ChevronRight className="h-5 w-5 text-gray-400" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
+      <footer className=" pb-10 mt-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="border-t border-gray-800 mt-8 pt-6 text-center">
+            <p>
+              &copy; {new Date().getFullYear()} ScoreB. Data powered by ESPN
+            </p>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }

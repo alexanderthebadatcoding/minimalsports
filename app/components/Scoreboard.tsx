@@ -105,7 +105,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
             <div
               key={game.id}
               className={`bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden  ${
-                games.length === 1 || games.length < 5 ? "col-span-2" : ""
+                games.length === 1 || games.length < 5 ? "col-span-full" : ""
               }`}
             >
               <div className="flex justify-between items-center bg-gray-200 dark:bg-slate-900 p-3">
@@ -140,11 +140,14 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                   >
                     <div className="flex items-center">
                       <Image
-                        src={team.team.logo || "/na.png"}
+                        src={team.team.logo || "/NA.png"} // Just reference it directly from public
                         alt={`${team.team.displayName} logo`}
                         width={48}
                         height={48}
                         className="mr-3"
+                        onError={(e) => {
+                          e.currentTarget.src = "/NA.png";
+                        }}
                       />
                       <div>
                         <span className="font-bold text-lg">
@@ -172,7 +175,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center items-center pb-5 px-3 text-center dark:text-gray-500 text-slate-600">
+              <div className="flex flex-col justify-center items-center pb-5 px-3 text-center dark:text-gray-500 text-slate-600">
                 {situation && (
                   <div className="text-lg mt-3">
                     <div>{situation.downDistanceText}</div>
