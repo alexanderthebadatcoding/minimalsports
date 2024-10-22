@@ -11,7 +11,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-6 text-center">
-          <p>&copy; {new Date().getFullYear()} ScoreB</p>
+          <p>&copy; {new Date().getFullYear()} ScoreB. Data powered by ESPN</p>
         </div>
       </div>
     </footer>
