@@ -25,6 +25,15 @@ export async function generateMetadata({
   return {
     title: pageTitle, // Dynamic title based on slug
     description: "Minimal Scoreboard created by Gilbster",
+    icons: {
+    icon: [
+      { url: '/icon', sizes: '32x32', type: 'image/png' },
+      { url: '/icon', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   };
 }
 
