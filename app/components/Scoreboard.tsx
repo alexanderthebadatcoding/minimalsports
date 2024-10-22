@@ -90,7 +90,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
 
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-6 auto-cols-max">
         {games.map((game) => {
           const competition = game.competitions?.[0]; // Safely access the first competition
           const situation = competition?.situation;
@@ -104,11 +104,11 @@ export default function Scoreboard({ games }: ScoreboardProps) {
           return (
             <div
               key={game.id}
-              className={`bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden ${
+              className={`bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden  ${
                 games.length === 1 || games.length < 5 ? "col-span-2" : ""
               }`}
             >
-              <div className="flex justify-between items-center bg-gray-100 dark:bg-slate-900 p-3">
+              <div className="flex justify-between items-center bg-gray-200 dark:bg-slate-900 p-3">
                 <span className="font-semibold text-lg">
                   {game.status.type.state === "in"
                     ? `${game.status.type.detail} ${" "} ${
@@ -132,11 +132,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     : `  ${competition?.broadcast ?? ""}`}
                 </span>
               </div>
-              <div
-                className={`pt-6 px-5 ${
-                  game.status.type.state === "pre" ? "flex justify-around" : ""
-                }`}
-              >
+              <div className={`pt-6 px-5`}>
                 {competition?.competitors?.map((team) => (
                   <div
                     key={team.homeAway}
@@ -176,20 +172,20 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-center items-center pb-5 px-3 text-center">
+              <div className="flex justify-center items-center pb-5 px-3 text-center dark:text-gray-500 text-slate-600">
                 {situation && (
-                  <div className="text-lg text-gray-600 mt-3">
+                  <div className="text-lg mt-3">
                     <div>{situation.downDistanceText}</div>
                     <div>{situation.lastPlay?.text || ""}</div>
                   </div>
                 )}
                 {competition.series && (
-                  <div className="text-lg text-gray-600 mt-3">
+                  <div className="text-lg mt-3">
                     <div>{competition.series.summary || ""}</div>
                   </div>
                 )}
                 {competition.headlines && (
-                  <div className="text-lg text-gray-600 mt-3">
+                  <div className="text-lg mt-3">
                     <div>{competition.headlines[0]?.shortLinkText}</div>
                   </div>
                 )}

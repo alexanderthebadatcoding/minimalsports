@@ -2,6 +2,7 @@ import Image from "next/image";
 // pages/_app.js
 import "./globals.css";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   const pages = [
@@ -23,22 +24,26 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 shadow-md rounded-lg overflow-hidden">
-      <h1 className="text-4xl font-bold mb-8 text-gray-600 dark:text-gray-200 text-center">
-        Welcome to Scoreb.site
-      </h1>
-      <div className="items-center bg-gray-100 dark:bg-slate-900 shadow-md rounded-lg p-6 w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-600 dark:text-gray-200">
-          Available Scoreboards:
-        </h2>
+    <main className="min-h-screen flex flex-col items-center justify-center  shadow-md rounded-lg overflow-hidden p-4">
+      <header className="text-center space-y-2">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-200">
+          ScoreB.site
+        </h1>
+        <p className="text-gray-600 dark:text-slate-300">
+          Choose a sport to view live scores
+        </p>
+      </header>
+
+      <div className="items-center p-6 w-full max-w-md">
         <ul className="space-y-3">
           {pages.map((page) => (
             <li key={page.path}>
               <Link
                 href={page.path}
-                className="text-blue-600 hover:underline text-xl"
+                className="w-full justify-between text-lg font-medium bg-white dark:bg-slate-900 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 px-4 py-2 border rounded-md flex items-center"
               >
                 {page.name}
+                <ChevronRight className="h-5 w-5 text-gray-400" />
               </Link>
             </li>
           ))}

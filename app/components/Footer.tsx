@@ -3,7 +3,10 @@ export default function Footer() {
     <footer className=" pb-10 mt-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center text-xl">
-          <a href="/" className="text-blue-600 hover:underline">
+          <a
+            href="/"
+            className="text-blue-700 dark:text-blue-500 hover:underline"
+          >
             Back
           </a>
         </div>
