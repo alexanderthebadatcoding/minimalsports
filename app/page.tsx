@@ -18,7 +18,7 @@ export default function Home() {
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
-    // { name: "UEFA Nations League", path: "/uefa" },
+    { name: "UEFA Champions League", path: "/uefa" },
     // { name: "Concacaf Nations League", path: "/concacaf" },
     // Add more pages as needed
   ];
