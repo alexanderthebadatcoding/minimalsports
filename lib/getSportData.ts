@@ -53,8 +53,8 @@ export function getSportData(slug: string) {
     title = "FIFA Women's Friendlies ⚽️";
   } else if (slug === "uefa") {
     apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard";
-    title = "UEFA Nations League ⚽️";
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard";
+    title = "UEFA Champions League ⚽️";
   } else if (slug === "concacaf") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard";
