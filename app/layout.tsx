@@ -24,16 +24,34 @@ export async function generateMetadata({
 
   return {
     title: pageTitle, // Dynamic title based on slug
-    description: "Minimal Scoreboard created by Gilbster",
+    description:
+      "Live sports scoreboard with real-time updates. Track ongoing games, view final scores, and see play updates. Simple, fast, and reliable. Just check the ScoreB.",
+    openGraph: {
+      description:
+        "Stay connected to the game with our real-time sports scoreboard. Get live score , track live matches, and play updates. Simple, fast, and reliable. Just check the ScoreB.",
+      images: [
+        {
+          url: "/og-image.png", // Path relative to the public directory
+          width: 200,
+          height: 200,
+          alt: "Site preview image",
+        },
+      ],
+      type: "website",
+    },
+
+    // Twitter meta tags
+    twitter: {
+      card: "summary_large_image",
+      images: ["/og-image.png"],
+    },
     icons: {
-    icon: [
-      { url: '/icon', sizes: '32x32', type: 'image/png' },
-      { url: '/icon', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon', sizes: '180x180', type: 'image/png' },
-    ],
-  },
+      icon: [
+        { url: "/icon", sizes: "32x32", type: "image/png" },
+        { url: "/icon", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    },
   };
 }
 
