@@ -14,18 +14,18 @@ export default function Home() {
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
+    { name: "UEFA Champions League", path: "/uefa" },
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
-    { name: "UEFA Champions League", path: "/uefa" },
     // { name: "Concacaf Nations League", path: "/concacaf" },
     // Add more pages as needed
   ];
 
   return (
     <>
-      <main className="min-h-screen flex flex-col items-center justify-center  shadow-md rounded-lg overflow-hidden p-4">
+      <main className="min-h-screen flex flex-col items-center justify-center rounded-lg overflow-hidden p-4">
         <header className="text-center space-y-2">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-200">
             ScoreB.site

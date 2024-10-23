@@ -129,7 +129,11 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     ? competition?.odds?.[0]?.details || ""
                     : game.status.type.state === "post"
                     ? ""
-                    : `  ${competition?.broadcast ?? ""}`}
+                    : `  ${
+                        competition?.broadcast && competition.broadcast !== ""
+                          ? competition.broadcast
+                          : competition?.broadcasts?.[0]?.names?.[0] ?? ""
+                      }`}
                 </span>
               </div>
               <div className={`pt-6 px-5`}>
