@@ -10,7 +10,7 @@ export default function Home() {
     { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
     { name: "NBA", path: "/nba" },
-    { name: "WNBA", path: "/wnba" },
+    // { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
