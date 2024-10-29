@@ -115,16 +115,12 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                         competition?.outsText || ""
                       }`
                     : game.status.type.state === "post"
-                    ? `${competition?.notes?.[0]?.headline ?? "Final"}`
+                    ? "Final"
                     : moment.utc(game.date).local().isSame(moment(), "day")
-                    ? `${competition?.notes?.[0]?.headline ?? ""} ${
-                        competition?.notes?.[0]?.headline ? " - " : ""
-                      }${moment.utc(game.date).local().format("h:mm a")} ${
+                    ? `${moment.utc(game.date).local().format("h:mm a")} ${
                         competition?.broadcasts?.[0]?.names?.[0] ?? ""
                       }`
-                    : `${competition?.notes?.[0]?.headline ?? ""}${
-                        competition?.notes?.[0]?.headline ? " - " : ""
-                      }${moment.utc(game.date).local().format("dddd h:mm a")}
+                    : `${moment.utc(game.date).local().format("dddd h:mm a")}
                       ${competition?.broadcasts?.[0]?.names?.[0] ?? ""} `}
                 </span>
 
@@ -192,7 +188,14 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                 )}
                 {competition.series && (
                   <div className="text-lg mt-3">
-                    <div>{competition.series.summary || ""}</div>
+                    <div>
+                      {competition?.notes?.[0]?.headline ?? ""}
+                      {competition?.notes?.[0]?.headline &&
+                      competition.series.summary
+                        ? ". "
+                        : ""}
+                      {competition.series.summary || ""}
+                    </div>
                   </div>
                 )}
                 {competition.headlines && (
