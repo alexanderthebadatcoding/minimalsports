@@ -117,11 +117,15 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     : game.status.type.state === "post"
                     ? `${competition?.notes?.[0]?.headline ?? "Final"}`
                     : moment.utc(game.date).local().isSame(moment(), "day")
-                    ? `${moment.utc(game.date).local().format("h:mm a")} ${
+                    ? `${competition?.notes?.[0]?.headline ?? ""} ${
+                        competition?.notes?.[0]?.headline ? " - " : ""
+                      }${moment.utc(game.date).local().format("h:mm a")} ${
                         competition?.broadcasts?.[0]?.names?.[0] ?? ""
                       }`
-                    : moment.utc(game.date).local().format("dddd h:mm a") +
-                      ` ${competition?.broadcasts?.[0]?.names?.[0] ?? ""}`}
+                    : `${competition?.notes?.[0]?.headline ?? ""}${
+                        competition?.notes?.[0]?.headline ? " - " : ""
+                      }${moment.utc(game.date).local().format("dddd h:mm a")}
+                      ${competition?.broadcasts?.[0]?.names?.[0] ?? ""} `}
                 </span>
 
                 <span className="text-sm text-gray-600 dark:text-gray-200">
