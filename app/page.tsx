@@ -8,7 +8,7 @@ export default function Home() {
   const pages = [
     { name: "NFL", path: "/nfl" },
     { name: "NCAA Football", path: "/cfb" },
-    { name: "MLB", path: "/mlb" },
+    // { name: "MLB", path: "/mlb" },
     { name: "NBA", path: "/nba" },
     // { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
@@ -19,7 +19,7 @@ export default function Home() {
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
-    // { name: "Concacaf Nations League", path: "/concacaf" },
+    { name: "Concacaf Nations League", path: "/concacaf" },
     // Add more pages as needed
   ];
 
