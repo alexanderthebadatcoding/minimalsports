@@ -55,6 +55,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard";
     title = "UEFA Champions League ⚽️";
+  } else if (slug === "uefaNations") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard";
+    title = "UEFA Nations League ⚽️";
   } else if (slug === "concacaf") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard";
