@@ -15,6 +15,7 @@ export default function Home() {
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
     { name: "UEFA Champions League", path: "/uefa" },
+    { name: "UEFA Nations League", path: "/uefaNations" },
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
