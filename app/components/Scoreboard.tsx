@@ -116,6 +116,13 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                       }`
                     : game.status.type.state === "post"
                     ? "Final"
+                    : moment.utc(game.date).local().diff(moment(), "days") > 5
+                    ? `${moment.utc(game.date).local().format("MM/DD")} ${moment
+                        .utc(game.date)
+                        .local()
+                        .format("h:mm a")} ${
+                        competition?.broadcasts?.[0]?.names?.[0] ?? ""
+                      }` // Short date format
                     : moment.utc(game.date).local().isSame(moment(), "day")
                     ? `${moment.utc(game.date).local().format("h:mm a")} ${
                         competition?.broadcasts?.[0]?.names?.[0] ?? ""
