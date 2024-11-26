@@ -99,13 +99,13 @@ export default function TeamPage() {
             <p className="mb-2">
               <span className="font-medium">Record:</span> {teamRecordSummary}
             </p>
-            <p className="mb-2">
-              <span className="font-medium">Location:</span>{" "}
-              {data.team?.location}
-            </p>
+            // <p className="mb-2">
+              // <span className="font-medium">Location:</span>{" "}
+              // {data.team?.location}
+            // </p>
             {data.team.rank != null && (
               <p className="mb-2">
-                <span className="font-medium">Rank:</span> {data?.team?.rank}
+                <span className="font-medium">National Rank:</span> {data?.team?.rank}
               </p>
             )}
 
