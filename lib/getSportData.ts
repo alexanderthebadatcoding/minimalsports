@@ -7,6 +7,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard";
     title = "NBA 🏀"; // Custom title
+  } else if (slug === "ncaam") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-collge-basketball/scoreboard";
+    title = "College Mens 🏀"; // Custom title
   } else if (slug === "wnba") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
