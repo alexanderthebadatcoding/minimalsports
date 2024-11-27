@@ -14,7 +14,7 @@ export default function Home() {
     // { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
-    { name: "NWSL", path: "/nwsl" },
+    // { name: "NWSL", path: "/nwsl" },
     { name: "UEFA Champions League", path: "/uefa" },
     { name: "UEFA Nations League", path: "/uefaNations" },
     { name: "Bundesliga", path: "/bundesliga" },
