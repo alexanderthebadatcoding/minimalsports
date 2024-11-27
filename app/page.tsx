@@ -1,4 +1,4 @@
-import Image from "next/image";
+uimport Image from "next/image";
 // pages/_app.js
 import "./globals.css";
 import Link from "next/link";
@@ -10,6 +10,7 @@ export default function Home() {
     { name: "NCAA Football", path: "/cfb" },
     // { name: "MLB", path: "/mlb" },
     { name: "NBA", path: "/nba" },
+    { name: "Mens College Basketball", path: "/ncaam" },
     // { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
