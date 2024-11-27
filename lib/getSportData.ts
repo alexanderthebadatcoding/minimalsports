@@ -9,7 +9,7 @@ export function getSportData(slug: string) {
     title = "NBA 🏀"; // Custom title
   } else if (slug === "ncaam") {
     apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-collge-basketball/scoreboard";
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard";
     title = "College Mens 🏀"; // Custom title
   } else if (slug === "wnba") {
     apiUrl =
