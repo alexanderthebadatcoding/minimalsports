@@ -1,4 +1,4 @@
-uimport Image from "next/image";
+import Image from "next/image";
 // pages/_app.js
 import "./globals.css";
 import Link from "next/link";
