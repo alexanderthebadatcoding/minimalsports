@@ -27,7 +27,7 @@ export default function TeamPage() {
 
   // Construct the API URL based on the abbreviation
   const apiUrl = abbreviation
-    ? `https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/${abbreviation.toLowerCase()}`
+    ? `http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/${abbreviation.toLowerCase()}`
     : null;
 
   // Always call the useSWR hook
@@ -149,6 +149,7 @@ export default function TeamPage() {
                         .local()
                         .format("dddd h:mm a")}
                 </span>
+
                 <span className="text-gray-600 dark:text-gray-200">{week}</span>
               </div>
 
