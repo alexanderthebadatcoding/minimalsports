@@ -13,7 +13,7 @@ export default function Home() {
     { name: "Mens College Basketball", path: "/ncaam" },
     // { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
-    { name: "MLS", path: "/mls" },
+    // { name: "MLS", path: "/mls" },
     // { name: "NWSL", path: "/nwsl" },
     { name: "UEFA Champions League", path: "/uefa" },
     { name: "UEFA Nations League", path: "/uefaNations" },
