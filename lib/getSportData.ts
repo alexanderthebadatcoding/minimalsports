@@ -11,6 +11,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard";
     title = "College Mens 🏀"; // Custom title
+  } else if (slug === "ncaaw") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/womens-college-basketball/scoreboard";
+    title = "College Womens 🏀"; // Custom title
   } else if (slug === "wnba") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
