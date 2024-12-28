@@ -187,8 +187,9 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                 ))}
               </div>
               <div className="flex flex-col justify-center items-center pb-5 px-3 text-center dark:text-gray-500 text-slate-600">
+                {competition?.notes?.[0]?.headline || ""}
                 {situation && (
-                  <div className="text-lg mt-3">
+                  <div className="text-lg mt-2">
                     <div>{situation.downDistanceText}</div>
                     <div>{situation.lastPlay?.text || ""}</div>
                   </div>
@@ -196,7 +197,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                 {competition.series && (
                   <div className="text-lg mt-3">
                     <div>
-                      {competition?.notes?.[0]?.headline ?? ""}
+                      {competition?.notes?.[0]?.headline || ""}
                       {competition?.notes?.[0]?.headline &&
                       competition.series.summary
                         ? ". "
