@@ -8,7 +8,7 @@ export default function Home() {
   const pages = [
     { name: "NFL", path: "/nfl" },
     { name: "NCAA Football", path: "/cfb" },
-    // { name: "MLB", path: "/mlb" },
+    { name: "MLB", path: "/mlb" },
     { name: "NBA", path: "/nba" },
     { name: "Mens College Basketball", path: "/ncaam" },
     { name: "Womens College Basketball", path: "/ncaaw" },
@@ -17,12 +17,12 @@ export default function Home() {
     // { name: "MLS", path: "/mls" },
     // { name: "NWSL", path: "/nwsl" },
     { name: "UEFA Champions League", path: "/uefa" },
-    { name: "UEFA Nations League", path: "/uefaNations" },
+    // { name: "UEFA Nations League", path: "/uefaNations" },
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
-    { name: "Concacaf Nations League", path: "/concacaf" },
+    // { name: "Concacaf Nations League", path: "/concacaf" },
     // Add more pages as needed
   ];
 
