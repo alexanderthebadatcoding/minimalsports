@@ -35,6 +35,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard";
     title = "MLB ⚾️"; // Custom title
+  } else if (slug === "ncaab") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/baseball/college-baseball/scoreboard";
+    title = "College Baseball ⚾️"; // Custom title
   } else if (slug === "mls") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard";
