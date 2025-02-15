@@ -26,7 +26,8 @@ export default function Home() {
     { name: "FIFA Friendlies", path: "/fifa" },
     // { name: "FIFA Womens Friendlies", path: "/fifaw" },
 		{ name: "Concacaf Nations League", path: "/concacaf" },
-    // Add more pages as needed
+    { name: "Concacaf Champions Cup", path: "/concacafCup" },
+    // Add more pages as needed 
   ];
 
   return (
