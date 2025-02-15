@@ -83,6 +83,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard";
     title = "Concacaf Nations League ⚽️";
+  } else if (slug === "concacafCup") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.champions/scoreboard";
+    title = "Concacaf Champions Cup ⚽️";
   }
   return { apiUrl, title };
 }
