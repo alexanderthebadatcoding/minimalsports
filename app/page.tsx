@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   const pages = [
-    { name: "NFL", path: "/nfl" },
+    // { name: "NFL", path: "/nfl" },
     // { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
     { name: "College Baseball", path: "/ncaab" },
