@@ -13,7 +13,7 @@ export default function Home() {
     { name: "NBA", path: "/nba" },
     { name: "Mens College Basketball", path: "/ncaam" },
     { name: "Womens College Basketball", path: "/ncaaw" },
-    // { name: "WNBA", path: "/wnba" },
+    { name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
@@ -24,7 +24,7 @@ export default function Home() {
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
-    // { name: "FIFA Womens Friendlies", path: "/fifaw" },
+    { name: "FIFA Womens Friendlies", path: "/fifaw" },
 		{ name: "Concacaf Nations League", path: "/concacaf" },
     { name: "Concacaf Champions Cup", path: "/concacafCup" },
     // Add more pages as needed 
