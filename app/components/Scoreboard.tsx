@@ -60,6 +60,10 @@ type Game = {
         type: string;
       }>;
     }>;
+    groups: {
+      shortName: string;
+      isConference: boolean;
+    };
     outsText: string;
   }>;
 };
@@ -187,7 +191,11 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                 ))}
               </div>
               <div className="flex flex-col justify-center items-center pb-5 px-3 text-center dark:text-gray-500 text-slate-600">
-                {competition?.notes?.[0]?.headline || ""}
+                {competition?.notes?.[0]?.headline ||
+                  (competition?.groups?.isConference
+                    ? competition.groups.shortName
+                    : "")}
+
                 {situation && (
                   <div className="text-lg mt-2">
                     <div>{situation.downDistanceText}</div>
