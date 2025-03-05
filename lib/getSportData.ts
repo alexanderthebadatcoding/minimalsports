@@ -55,6 +55,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard";
     title = "Bundesliga ⚽️"; // Custom title
+  } else if (slug === "b2") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.2/scoreboard";
+    title = "2. Bundesliga ⚽️"; // Custom title
   } else if (slug === "epl") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard";
