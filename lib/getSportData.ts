@@ -71,6 +71,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly.w/scoreboard";
     title = "FIFA Women's Friendlies ⚽️";
+  } else if (slug === "cwc") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.cwc/scoreboard";
+    title = "FIFA Club World Cup ⚽️";
   } else if (slug === "uefa") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard";
