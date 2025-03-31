@@ -25,6 +25,7 @@ export default function Home() {
     { name: "English Premier League", path: "/epl" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
+		{ name: "FIFA Club World Cup", path: "/cwc" },
 		// { name: "Concacaf Nations League", path: "/concacaf" },
     { name: "Concacaf Champions Cup", path: "/concacafCup" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
