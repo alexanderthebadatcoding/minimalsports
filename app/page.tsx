@@ -28,8 +28,9 @@ export default function Home() {
 		{ name: "FIFA Club World Cup", path: "/cwc" },
 		// { name: "Concacaf Nations League", path: "/concacaf" },
     { name: "Concacaf Champions Cup", path: "/concacafCup" },
+		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
-    // Add more pages as needed
+    // Add more pages as needed concacafLeagues
   ];
 
   return (
