@@ -206,10 +206,6 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                   <div className="text-lg mt-3">
                     <div>
                       {/* {competition?.notes?.[0]?.headline || ""} */}
-                      {competition?.notes?.[0]?.headline &&
-                      competition.series.summary
-                        ? ". "
-                        : ""}
                       {competition.series.summary || ""}
                     </div>
                   </div>
