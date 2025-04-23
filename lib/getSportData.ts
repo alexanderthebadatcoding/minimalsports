@@ -99,12 +99,15 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.leagues.cup/scoreboard";
     title = "Concacaf Leagues Cup ⚽️";
-  }
-		else if (slug === "sheBelieves") {
+  } else if (slug === "concacafGold") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.gold/scoreboard";
+    title = "Concacaf Gold Cup ⚽️";
+  } else if (slug === "sheBelieves") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.shebelieves/scoreboard";
     title = "She Believes Cup ⚽️";
   }
-// fifa.shebelieves 
+// fifa.shebelieves concacaf.gold
   return { apiUrl, title };
 }
