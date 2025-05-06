@@ -43,6 +43,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard";
     title = "MLS ⚽️"; // Custom title
+  } else if (slug === "open") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.open/scoreboard";
+    title = "USA Open Cup ⚽️"; // Custom title
   } else if (slug === "club") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/club.friendly/scoreboard";
