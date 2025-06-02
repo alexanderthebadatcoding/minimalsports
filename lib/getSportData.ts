@@ -111,7 +111,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.shebelieves/scoreboard";
     title = "She Believes Cup ⚽️";
+  } else if (slug === "fifaconQ") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.concacaf/scoreboard";
+    title = "FIFA World Cup Qualifying - Concacaf";
   }
-// fifa.shebelieves concacaf.gold
+// fifa.shebelieves concacaf.gold fifa.worldq.concacaf
   return { apiUrl, title };
 }
