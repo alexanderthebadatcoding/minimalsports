@@ -31,8 +31,8 @@ export default function Home() {
     { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
     { name: "World Cup Qualifying - UEFA", path: "/worldq" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
-    { name: "Concacaf Champions Cup", path: "/concacafCup" },
-    // { name: "Concacaf Gold Cup", path: "/concacafGold" },
+    // { name: "Concacaf Champions Cup", path: "/concacafCup" },
+    { name: "Concacaf Gold Cup", path: "/concacafGold" },
 		// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
 	  
