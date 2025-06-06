@@ -119,7 +119,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.weuro/scoreboard";
     title = "Womens European Championship";
+  } else if (slug === "worldq") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.uefa/scoreboard";
+    title = "World Cup Qualifying - UEFA";
   }
-// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro
+// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa
   return { apiUrl, title };
 }
