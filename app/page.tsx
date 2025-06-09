@@ -30,6 +30,7 @@ export default function Home() {
     { name: "FIFA Club World Cup", path: "/cwc" },
     { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
     { name: "World Cup Qualifying - UEFA", path: "/worldq" },
+    { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
     { name: "Concacaf Gold Cup", path: "/concacafGold" },
