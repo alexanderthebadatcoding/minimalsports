@@ -123,7 +123,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.uefa/scoreboard";
     title = "World Cup Qualifying - UEFA";
+  } else if (slug === "worldAFC") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.afc/scoreboard";
+    title = "World Cup Qualifying - AFC";
   }
-// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa
+// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa fifa.worldq.afc
   return { apiUrl, title };
 }
