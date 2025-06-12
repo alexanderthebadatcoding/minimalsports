@@ -20,7 +20,7 @@ export default function Home() {
     { name: "USA Open Cup", path: "/open" },
     { name: "Club Friendly", path: "/club" },
     // { name: "UEFA Champions League", path: "/uefa" },
-    { name: "UEFA Nations League", path: "/uefaNations" },
+    // { name: "UEFA Nations League", path: "/uefaNations" },
     // { name: "UEFA Europa League", path: "/uefaeu" },
     // { name: "Bundesliga", path: "/bundesliga" },
     // { name: "English Premier League", path: "/epl" },
