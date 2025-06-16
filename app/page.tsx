@@ -6,6 +6,8 @@ import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   const pages = [
+    { name: "Concacaf Gold Cup", path: "/concacafGold" },
+    { name: "FIFA Club World Cup", path: "/cwc" },
     // { name: "NFL", path: "/nfl" },
     // { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
@@ -27,13 +29,12 @@ export default function Home() {
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
     { name: "Women's European Championship", path: "/weuro" },
-    { name: "FIFA Club World Cup", path: "/cwc" },
-    { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
-    { name: "World Cup Qualifying - UEFA", path: "/worldq" },
-    { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
+    // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
+    // { name: "World Cup Qualifying - UEFA", path: "/worldq" },
+    // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
-    { name: "Concacaf Gold Cup", path: "/concacafGold" },
+    
 		// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
 	  
