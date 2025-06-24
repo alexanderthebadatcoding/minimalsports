@@ -218,7 +218,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                  {competition.venue && (
                   <div className="text-lg mt-3">
                     <div>
-                      {competition.venue.displayName || ""}
+                        {competition.venue.fullName || ""}
                     </div>
                   </div>
                 )}
