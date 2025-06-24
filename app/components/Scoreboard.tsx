@@ -16,7 +16,7 @@ type Game = {
   };
 	venue?: {
     // id: string;
-    fullName: string;
+    displayName: string;
   };
 
   competitions: Array<{
@@ -215,11 +215,11 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     </div>
                   </div>
                 )}
-                 {competition.venue && (
+                 {venue && (
                   <div className="text-lg mt-3">
                     <div>
                       {/* {competition?.notes?.[0]?.headline || ""} */}
-                      {competition.venue.fullName || ""}
+                      {venue.displayName || ""}
                     </div>
                   </div>
                 )}
