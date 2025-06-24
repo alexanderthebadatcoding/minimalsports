@@ -14,6 +14,11 @@ type Game = {
     displayClock: string;
     period: number;
   };
+	venue?: {
+    // id: string;
+    fullName: string;
+  };
+
   competitions: Array<{
     broadcast: string;
     headlines?: Array<{
@@ -207,6 +212,14 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     <div>
                       {/* {competition?.notes?.[0]?.headline || ""} */}
                       {competition.series.summary || ""}
+                    </div>
+                  </div>
+                )}
+                 {competition.venue && (
+                  <div className="text-lg mt-3">
+                    <div>
+                      {/* {competition?.notes?.[0]?.headline || ""} */}
+                      {competition.venue.fullName || ""}
                     </div>
                   </div>
                 )}
