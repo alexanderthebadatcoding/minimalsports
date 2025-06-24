@@ -11,7 +11,7 @@ export default function Home() {
     // { name: "NFL", path: "/nfl" },
     // { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
-    { name: "College Baseball", path: "/ncaab" },
+    // { name: "College Baseball", path: "/ncaab" },
     // { name: "NBA", path: "/nba" },
     // { name: "Mens College Basketball", path: "/ncaam" },
     // { name: "Womens College Basketball", path: "/ncaaw" },
