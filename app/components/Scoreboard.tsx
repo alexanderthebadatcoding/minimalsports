@@ -14,11 +14,7 @@ type Game = {
     displayClock: string;
     period: number;
   };
-	venue?: {
-    // id: string;
-    displayName: string;
-  };
-
+	
   competitions: Array<{
     broadcast: string;
     headlines?: Array<{
@@ -48,6 +44,10 @@ type Game = {
         current: string;
       };
     }>;
+		venue?: {
+    // id: string;
+    fullName: string;
+  };
     situation?: {
       downDistanceText: string;
       possessionText: string;
@@ -215,11 +215,10 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     </div>
                   </div>
                 )}
-                 {venue && (
+                 {competition.venue && (
                   <div className="text-lg mt-3">
                     <div>
-                      {/* {competition?.notes?.[0]?.headline || ""} */}
-                      {venue.displayName || ""}
+                      {competition.venue.displayName || ""}
                     </div>
                   </div>
                 )}
