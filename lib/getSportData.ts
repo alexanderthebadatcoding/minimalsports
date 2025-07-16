@@ -127,7 +127,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.afc/scoreboard";
     title = "World Cup Qualifying - AFC";
+  } else if (slug === "nbaSummer") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/nba-summer/scoreboard";
+    title = "NBA Summer League";
   }
-// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa fifa.worldq.afc
+// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa fifa.worldq.afc nba-summer
   return { apiUrl, title };
 }
