@@ -129,7 +129,7 @@ export function getSportData(slug: string) {
     title = "World Cup Qualifying - AFC";
   } else if (slug === "nbaSummer") {
     apiUrl =
-      "https://site.api.espn.com/apis/site/v2/sports/soccer/nba-summer/scoreboard";
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/nba-summer/scoreboard";
     title = "NBA Summer League";
   }
 // fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa fifa.worldq.afc nba-summer
