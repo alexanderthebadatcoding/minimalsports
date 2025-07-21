@@ -35,8 +35,7 @@ export default function Home() {
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
-    
-		// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
+		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
 	  
     // Add more pages as needed concacafLeagues concacafGold
