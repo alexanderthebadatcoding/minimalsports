@@ -8,8 +8,8 @@ export default function Home() {
   const pages = [
     // { name: "Concacaf Gold Cup", path: "/concacafGold" },
     // { name: "FIFA Club World Cup", path: "/cwc" },
-    // { name: "NFL", path: "/nfl" },
-    // { name: "NCAA Football", path: "/cfb" },
+    { name: "NFL", path: "/nfl" },
+    { name: "NCAA Football", path: "/cfb" },
     { name: "MLB", path: "/mlb" },
     // { name: "College Baseball", path: "/ncaab" },
     // { name: "NBA Summer League", path: "/nbaSummer" },
