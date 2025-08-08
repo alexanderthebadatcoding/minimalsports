@@ -8,9 +8,9 @@ export default function Home() {
   const pages = [
     // { name: "Concacaf Gold Cup", path: "/concacafGold" },
     // { name: "FIFA Club World Cup", path: "/cwc" },
+		{ name: "MLB", path: "/mlb" },
     { name: "NFL", path: "/nfl" },
     { name: "NCAA Football", path: "/cfb" },
-    { name: "MLB", path: "/mlb" },
     // { name: "College Baseball", path: "/ncaab" },
     // { name: "NBA Summer League", path: "/nbaSummer" },
     // { name: "NBA", path: "/nba" },
@@ -20,6 +20,7 @@ export default function Home() {
     // { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
+		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     { name: "USA Open Cup", path: "/open" },
     { name: "Club Friendly", path: "/club" },
     // { name: "UEFA Champions League", path: "/uefa" },
@@ -35,7 +36,6 @@ export default function Home() {
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
-		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "She Believes Cup", path: "/sheBelieves" },
 	  
     // Add more pages as needed concacafLeagues concacafGold
