@@ -32,7 +32,7 @@ export default function Home() {
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" },
     // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
-    // { name: "World Cup Qualifying - UEFA", path: "/worldq" },
+    { name: "World Cup Qualifying", path: "/worldq" },
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
