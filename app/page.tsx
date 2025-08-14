@@ -29,7 +29,7 @@ export default function Home() {
     { name: "Bundesliga", path: "/bundesliga" },
     { name: "English Premier League", path: "/epl" },
     { name: "German Cup", path: "/germanCup" },
-		{ name: "Europa League Qualifying", path: "/EUQual" },
+	{ name: "Europa League Qualifying", path: "/EUQual" },
     { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" }, 
