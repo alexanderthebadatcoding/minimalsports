@@ -138,7 +138,7 @@ export function getSportData(slug: string) {
   } else if (slug === "EUQual") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
-    title = "German Cup";
+    title = "Europa League Qualifying";
   }
 // fifa.shebelieves ger.dfb_pokal uefa.europa_qual
   return { apiUrl, title };
