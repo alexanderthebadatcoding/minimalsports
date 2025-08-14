@@ -131,7 +131,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/nba-summer/scoreboard";
     title = "NBA Summer League";
+  } else if (slug === "germanCup") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard";
+    title = "German Cup";
   }
-// fifa.shebelieves concacaf.gold fifa.worldq.concacaf uefa.weuro fifa.worldq.uefa fifa.worldq.afc nba-summer
+// fifa.shebelieves ger.dfb_pokal
   return { apiUrl, title };
 }
