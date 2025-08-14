@@ -135,7 +135,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard";
     title = "German Cup";
+  } else if (slug === "EUQual") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
+    title = "German Cup";
   }
-// fifa.shebelieves ger.dfb_pokal
+// fifa.shebelieves ger.dfb_pokal uefa.europa_qual
   return { apiUrl, title };
 }
