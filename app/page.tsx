@@ -27,6 +27,7 @@ export default function Home() {
     // { name: "UEFA Nations League", path: "/uefaNations" },
     // { name: "UEFA Europa League", path: "/uefaeu" },
     { name: "Bundesliga", path: "/bundesliga" },
+	{ name: "2. Bundesliga", path: "/b2" },
     { name: "English Premier League", path: "/epl" },
     { name: "German Cup", path: "/germanCup" },
 	{ name: "Europa League Qualifying", path: "/EUQual" },
