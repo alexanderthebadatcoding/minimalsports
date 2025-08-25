@@ -22,7 +22,7 @@ export default function Home() {
     { name: "NWSL", path: "/nwsl" },
 		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
     // { name: "USA Open Cup", path: "/open" },
-    { name: "Club Friendly", path: "/club" },
+    // { name: "Club Friendly", path: "/club" },
     // { name: "UEFA Champions League", path: "/uefa" },
     // { name: "UEFA Nations League", path: "/uefaNations" },
     // { name: "UEFA Europa League", path: "/uefaeu" },
