@@ -67,6 +67,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard";
     title = "English Premier League ⚽️";
+  } else if (slug === "laliga") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard";
+    title = "La Liga ⚽️";
   } else if (slug === "fifa") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard";
