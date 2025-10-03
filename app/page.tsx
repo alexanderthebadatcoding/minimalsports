@@ -40,9 +40,9 @@ export default function Home() {
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
-    // { name: "She Believes Cup", path: "/sheBelieves" },
+    { name: "DFB Pokal", path: "/germanCup" },
 	  
-    // Add more pages as needed concacafLeagues concacafGold
+    // Add more pages as needed germanCup
   ];
 
   return (
