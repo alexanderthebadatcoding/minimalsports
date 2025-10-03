@@ -28,7 +28,7 @@ export default function Home() {
     // { name: "Club Friendly", path: "/club" },
     { name: "UEFA Champions League", path: "/uefa" },
     // { name: "UEFA Nations League", path: "/uefaNations" },
-		{ name: "USA Open Cup", path: "/open" },
+		// { name: "USA Open Cup", path: "/open" },
     { name: "German Cup", path: "/germanCup" },
 	  //{ name: "Europa League Qualifying", path: "/EUQual" },
     { name: "FIFA Friendlies", path: "/fifa" },
