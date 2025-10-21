@@ -30,8 +30,8 @@ export default function Home() {
     // { name: "UEFA Nations League", path: "/uefaNations" },
 		// { name: "USA Open Cup", path: "/open" },
     { name: "German Cup", path: "/germanCup" },
-	  //{ name: "Europa League Qualifying", path: "/EUQual" },
-    { name: "FIFA Friendlies", path: "/fifa" },
+	  // { name: "Europa League Qualifying", path: "/EUQual" },
+    // { name: "FIFA Friendlies", path: "/fifa" },
     { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" }, 
     // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
@@ -40,7 +40,7 @@ export default function Home() {
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 		// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
-    { name: "DFB Pokal", path: "/germanCup" },
+    // { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed germanCup
   ];
