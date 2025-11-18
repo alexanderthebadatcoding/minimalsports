@@ -139,11 +139,15 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard";
     title = "German Cup";
+  } else if (slug === "ncaaSoccer") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.m.1/scoreboard";
+    title = "NCAA Mens";
   } else if (slug === "EUQual") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
     title = "Europa League Qualifying";
   }
-// fifa.shebelieves ger.dfb_pokal uefa.europa_qual
+// fifa.shebelieves ger.dfb_pokal uefa.europa_qual usa.ncaa.m.1
   return { apiUrl, title };
 }
