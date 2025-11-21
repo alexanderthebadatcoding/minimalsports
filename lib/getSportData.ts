@@ -142,7 +142,7 @@ export function getSportData(slug: string) {
   } else if (slug === "ncaaSoccer") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.m.1/scoreboard";
-    title = "NCAA Mens";
+    title = "NCAA Mens ⚽️";
   } else if (slug === "EUQual") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
