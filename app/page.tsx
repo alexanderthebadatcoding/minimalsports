@@ -19,7 +19,7 @@ export default function Home() {
     //{ name: "WNBA", path: "/wnba" },
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
-    { name: "NWSL", path: "/nwsl" },
+    // { name: "NWSL", path: "/nwsl" },
     { name: "LALIGA", path: "/laliga" },
 		{ name: "English Premier League", path: "/epl" },
     { name: "Bundesliga", path: "/bundesliga" },
