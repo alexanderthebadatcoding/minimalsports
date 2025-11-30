@@ -143,7 +143,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.m.1/scoreboard";
     title = "NCAA Mens ⚽️";
-  } else if (slug === "EUQual") {
+  } else if (slug === "ncaaWSoccer") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.w.1/scoreboard";
+    title = "NCAA Womens ⚽️";
+	} else if (slug === "EUQual") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
     title = "Europa League Qualifying";
