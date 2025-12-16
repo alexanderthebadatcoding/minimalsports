@@ -39,6 +39,7 @@ export default function Home() {
     // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
     { name: "World Cup Qualifying", path: "/worldq" },
 	{ name: "UEFA Europa League", path: "/uefaeu" },
+	{ name: "Africa Cup of Nations", path: "/caf" },
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
     // { name: "Concacaf Champions Cup", path: "/concacafCup" },
