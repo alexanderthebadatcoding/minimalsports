@@ -17,7 +17,7 @@ export default function Home() {
     { name: "Womens College Basketball", path: "/ncaaw" },
 	// { name: "Mens College Soccer", path: "/ncaaSoccer" },
 	// { name: "Womens College Soccer", path: "/ncaaWSoccer" },
-	 name: "Womens Volleyball", path: "/volleyball" },
+	 { name: "Womens Volleyball", path: "/volleyball" },
     // { name: "WNBA", path: "/wnba" }, 
     { name: "NHL", path: "/nhl" },
     // { name: "MLS", path: "/mls" },
