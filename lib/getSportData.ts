@@ -151,7 +151,11 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard";
     title = "Europa League Qualifying";
-  }
-// fifa.shebelieves ger.dfb_pokal uefa.europa_qual usa.ncaa.m.1
+  } else if (slug === "volleyball") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/volleyball/womens-college-volleyball/scoreboard";
+    title = "NCAA Womens 🏐";
+	}
+// fifa.shebelieves ger.dfb_pokal uefa.europa_qual usa.ncaa.m.1 
   return { apiUrl, title };
 }
