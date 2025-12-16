@@ -14,7 +14,7 @@ type Game = {
     displayClock: string;
     period: number;
   };
-	
+
   competitions: Array<{
     broadcast: string;
     headlines?: Array<{
@@ -44,10 +44,10 @@ type Game = {
         current: string;
       };
     }>;
-		venue?: {
-    // id: string;
-    fullName: string;
-  };
+    venue?: {
+      // id: string;
+      fullName: string;
+    };
     situation?: {
       downDistanceText: string;
       possessionText: string;
@@ -110,6 +110,14 @@ export default function Scoreboard({ games }: ScoreboardProps) {
               )
             : null;
 
+          const sortedCompetitors = competition?.competitors
+            ? [...competition.competitors].sort((a, b) => {
+                if (a.homeAway === "away") return -1;
+                if (b.homeAway === "away") return 1;
+                return 0;
+              })
+            : [];
+
           return (
             <div
               key={game.id}
@@ -153,7 +161,7 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                 </span>
               </div>
               <div className={`pt-6 px-5`}>
-                {competition?.competitors?.map((team) => (
+                {sortedCompetitors.map((team) => (
                   <div
                     key={team.homeAway}
                     className="flex justify-between items-center mb-4"
@@ -215,11 +223,9 @@ export default function Scoreboard({ games }: ScoreboardProps) {
                     </div>
                   </div>
                 )}
-                 {competition.venue && (
+                {competition.venue && (
                   <div className="text-lg mt-3">
-                    <div>
-                        {competition.venue.fullName || ""}
-                    </div>
+                    <div>{competition.venue.fullName || ""}</div>
                   </div>
                 )}
                 {competition.headlines && (
