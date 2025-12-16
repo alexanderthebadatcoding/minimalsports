@@ -139,6 +139,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.dfb_pokal/scoreboard";
     title = "German Cup";
+  } else if (slug === "caf") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/caf.nations/scoreboard";
+    title = "Africa Cup of Nations";
   } else if (slug === "ncaaSoccer") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.ncaa.m.1/scoreboard";
