@@ -142,7 +142,7 @@ export function getSportData(slug: string) {
   } else if (slug === "italyCup") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.super_cup/scoreboard";
-    title = "German Cup";
+    title = "Supercoppa Italiana";
   } else if (slug === "caf") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/caf.nations/scoreboard";
