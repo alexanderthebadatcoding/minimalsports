@@ -28,7 +28,7 @@ export default function Home() {
 	{ name: "2. Bundesliga", path: "/b2" },
 	// { name: "Supercoppa Italiana", path: "/italyCup" },
 	// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
-    // { name: "Club Friendly", path: "/club" },
+  { name: "Club Friendly", path: "/club" },
    // { name: "UEFA Champions League", path: "/uefa" },
     // { name: "UEFA Nations League", path: "/uefaNations" },
 	// { name: "USA Open Cup", path: "/open" },
