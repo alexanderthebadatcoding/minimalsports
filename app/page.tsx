@@ -35,7 +35,7 @@ export default function Home() {
     // { name: "German Cup", path: "/germanCup" },
 	// { name: "Europa League Qualifying", path: "/EUQual" },
     { name: "FIFA Friendlies", path: "/fifa" },
-    // { name: "FIFA Womens Friendlies", path: "/fifaw" },
+   { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" }, 
     // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
    // { name: "World Cup Qualifying", path: "/worldq" },
