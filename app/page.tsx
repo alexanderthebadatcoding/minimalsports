@@ -26,7 +26,7 @@ export default function Home() {
 	{ name: "English Premier League", path: "/epl" },
     { name: "Bundesliga", path: "/bundesliga" },
 	{ name: "2. Bundesliga", path: "/b2" },
-	{ name: "Supercoppa Italiana", path: "/italyCup" },
+	{ name: "Coppa Italiana", path: "/italyCup" },
 	// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
   { name: "Club Friendly", path: "/club" },
   { name: "UEFA Champions League", path: "/uefa" },
