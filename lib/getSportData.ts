@@ -163,6 +163,14 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/volleyball/womens-college-volleyball/scoreboard";
     title = "NCAA Womens 🏐";
+	} else if (slug === "OlympicHockey") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/hockey/olympics-mens-ice-hockey/scoreboard";
+    title = "Mens Ice Hockey 🏒";
+	} else if (slug === "OlympicHockeyW") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/hockey/olympics-womens-ice-hockey/scoreboard";
+    title = "Womens Ice Hockey 🏒";
 	}
 // fifa.shebelieves ger.dfb_pokal uefa.europa_qual usa.ncaa.m.1 
   return { apiUrl, title };
