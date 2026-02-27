@@ -7,6 +7,7 @@ import { ChevronRight } from "lucide-react";
 export default function Home() {
   const pages = [
     // { name: "Concacaf Gold Cup", path: "/concacafGold" },
+		// { name: "She Believes Cup", path: "/sheBelieves" },
     // { name: "FIFA Club World Cup", path: "/cwc" },
 		// { name: "Men's Olympic Hockey", path: "/OlympicHockey" },
 		// { name: "Women's Olympic Hockey", path: "/OlympicHockeyW" },
