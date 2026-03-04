@@ -45,7 +45,7 @@ export default function Home() {
 	// { name: "Africa Cup of Nations", path: "/caf" },
     // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
-    // { name: "Concacaf Champions Cup", path: "/concacafCup" },
+  { name: "Concacaf Champions Cup", path: "/concacafCup" },
   { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed
