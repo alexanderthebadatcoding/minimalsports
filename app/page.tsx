@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 export default function Home() {
   const pages = [
     // { name: "Concacaf Gold Cup", path: "/concacafGold" },
-		{ name: "She Believes Cup", path: "/sheBelieves" },
+		// { name: "She Believes Cup", path: "/sheBelieves" },
     // { name: "FIFA Club World Cup", path: "/cwc" },
 		// { name: "Men's Olympic Hockey", path: "/OlympicHockey" },
 		// { name: "Women's Olympic Hockey", path: "/OlympicHockeyW" },
@@ -33,20 +33,20 @@ export default function Home() {
 	// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
   { name: "Club Friendly", path: "/club" },
   { name: "UEFA Champions League", path: "/uefa" },
-    // { name: "UEFA Nations League", path: "/uefaNations" },
+  { name: "UEFA Nations League", path: "/uefaNations" },
 	// { name: "USA Open Cup", path: "/open" },
 	// { name: "Europa League Qualifying", path: "/EUQual" },
     { name: "FIFA Friendlies", path: "/fifa" },
    { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" }, 
-    // { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
-   // { name: "World Cup Qualifying", path: "/worldq" },
+  	{ name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
+   	{ name: "World Cup Qualifying", path: "/worldq" },
 		{ name: "UEFA Europa League", path: "/uefaeu" },
 	// { name: "Africa Cup of Nations", path: "/caf" },
-    // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
+    { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
   { name: "Concacaf Champions Cup", path: "/concacafCup" },
-  { name: "DFB Pokal", path: "/germanCup" },
+  // { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed
   ];
