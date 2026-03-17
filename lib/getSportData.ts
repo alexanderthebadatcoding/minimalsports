@@ -10,7 +10,11 @@ export function getSportData(slug: string) {
   } else if (slug === "ncaam") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard";
-    title = "College Mens 🏀"; // Custom title
+    title = "College Mens 🏀"; // Custom title mens-college-basketball/scoreboard?groups=98
+  } else if (slug === "nit") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=98";
+    title = "NIT 🏀"; // mens-college-basketball/scoreboard?groups=98
   } else if (slug === "ncaaw") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/womens-college-basketball/scoreboard";
