@@ -16,9 +16,9 @@ export default function Home() {
     // { name: "NCAA Football", path: "/cfb" },
     // { name: "NBA Summer League", path: "/nbaSummer" },
   	{ name: "NBA", path: "/nba" },
-    { name: "Mens College Basketball", path: "/ncaam" },
-    { name: "Womens College Basketball", path: "/ncaaw" },
-		{ name: "NIT", path: "/nit" },
+    // { name: "Mens College Basketball", path: "/ncaam" },
+    // { name: "Womens College Basketball", path: "/ncaaw" },
+		// { name: "NIT", path: "/nit" },
 	// { name: "Mens College Soccer", path: "/ncaaSoccer" },
 	// { name: "Womens College Soccer", path: "/ncaaWSoccer" },
 	// { name: "Womens Volleyball", path: "/volleyball" },
@@ -44,10 +44,10 @@ export default function Home() {
    	{ name: "World Cup Qualifying", path: "/worldq" },
 		{ name: "UEFA Europa League", path: "/uefaeu" },
 	// { name: "Africa Cup of Nations", path: "/caf" },
-    // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
+  { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
   { name: "Concacaf Champions Cup", path: "/concacafCup" },
-  // { name: "DFB Pokal", path: "/germanCup" },
+  { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed
   ];
