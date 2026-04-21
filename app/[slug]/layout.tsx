@@ -5,14 +5,14 @@ import "../globals.css";
 import { getSportData } from "@/lib/getSportData";
 
 const inter = Inter({ subsets: ["latin"] });
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const { title } = getSportData(slug);
-
   const ogImageUrl = `/api/og/${slug}?title=${encodeURIComponent(title)}`;
 
   return {
@@ -33,12 +33,13 @@ export async function generateMetadata({
   };
 }
 
-export default function SlugLayout({
+export default async function SlugLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   return <div>{children}</div>;
 }
