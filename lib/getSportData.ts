@@ -87,6 +87,10 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.cwc/scoreboard";
     title = "FIFA Club World Cup ⚽️";
+  } else if (slug === "worldcup") {
+    apiUrl =
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard";
+    title = "FIFA World Cup ⚽️";
   } else if (slug === "uefa") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard";
