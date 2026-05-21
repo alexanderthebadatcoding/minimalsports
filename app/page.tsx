@@ -9,6 +9,7 @@ export default function Home() {
     // { name: "Concacaf Gold Cup", path: "/concacafGold" },
 		// { name: "She Believes Cup", path: "/sheBelieves" },
     // { name: "FIFA Club World Cup", path: "/cwc" },
+		{ name: "World Cup", path: "/worldcup" },
 		// { name: "Men's Olympic Hockey", path: "/OlympicHockey" },
 		// { name: "Women's Olympic Hockey", path: "/OlympicHockeyW" },
 		{ name: "MLB", path: "/mlb" },
