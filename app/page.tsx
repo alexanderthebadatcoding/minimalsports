@@ -27,8 +27,8 @@ export default function Home() {
     { name: "NHL", path: "/nhl" },
     { name: "MLS", path: "/mls" },
     { name: "NWSL", path: "/nwsl" },
-    { name: "LALIGA", path: "/laliga" },
-		{ name: "English Premier League", path: "/epl" },
+    // { name: "LALIGA", path: "/laliga" },
+		// { name: "English Premier League", path: "/epl" },
 		// { name: "Bundesliga", path: "/bundesliga" },
 	// { name: "2. Bundesliga", path: "/b2" },
 	// { name: "Coppa Italiana", path: "/italyCup" },
@@ -47,7 +47,7 @@ export default function Home() {
 	// { name: "Africa Cup of Nations", path: "/caf" },
   // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
-  // { name: "Concacaf Champions Cup", path: "/concacafCup" },
+  { name: "Concacaf Champions Cup", path: "/concacafCup" },
   { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed
