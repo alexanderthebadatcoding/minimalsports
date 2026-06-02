@@ -34,7 +34,7 @@ export default function Home() {
 	// { name: "Coppa Italiana", path: "/italyCup" },
 	// { name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
   { name: "Club Friendly", path: "/club" },
-  { name: "UEFA Champions League", path: "/uefa" },
+  // { name: "UEFA Champions League", path: "/uefa" },
   // { name: "UEFA Nations League", path: "/uefaNations" },
 	{ name: "USA Open Cup", path: "/open" },
 	// { name: "Europa League Qualifying", path: "/EUQual" },
@@ -43,12 +43,12 @@ export default function Home() {
     // { name: "Women's European Championship", path: "/weuro" }, 
   	// { name: "World Cup Qualifying - Concacaf", path: "/fifaconQ" },
    	// { name: "World Cup Qualifying", path: "/worldq" },
-		{ name: "UEFA Europa League", path: "/uefaeu" },
+		// { name: "UEFA Europa League", path: "/uefaeu" },
 	// { name: "Africa Cup of Nations", path: "/caf" },
   // { name: "World Cup Qualifying - AFC", path: "/worldAFC" },
 	// { name: "Concacaf Nations League", path: "/concacaf" }, 
-  { name: "Concacaf Champions Cup", path: "/concacafCup" },
-  { name: "DFB Pokal", path: "/germanCup" },
+ // { name: "Concacaf Champions Cup", path: "/concacafCup" },
+  // { name: "DFB Pokal", path: "/germanCup" },
 	  
     // Add more pages as needed
   ];
