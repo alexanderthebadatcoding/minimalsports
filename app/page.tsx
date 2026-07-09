@@ -37,7 +37,7 @@ export default function Home() {
   // { name: "UEFA Champions League", path: "/uefa" },
   // { name: "UEFA Nations League", path: "/uefaNations" },
 	{ name: "USA Open Cup", path: "/open" },
-	// { name: "Europa League Qualifying", path: "/EUQual" },
+	{ name: "Europa League Qualifying", path: "/EUQual" },
   // { name: "FIFA Friendlies", path: "/fifa" },
   // { name: "FIFA Womens Friendlies", path: "/fifaw" },
     // { name: "Women's European Championship", path: "/weuro" }, 
