@@ -30,7 +30,7 @@ export default function Home() {
     { name: "LALIGA", path: "/laliga" },
 		{ name: "English Premier League", path: "/epl" },
 		{ name: "Bundesliga", path: "/bundesliga" },
-	// { name: "2. Bundesliga", path: "/b2" },
+		{ name: "2. Bundesliga", path: "/b2" },
 	// { name: "Coppa Italiana", path: "/italyCup" },
 		{ name: "Concacaf Leagues Cup", path: "/concacafLeagues" },
   	{ name: "Club Friendly", path: "/club" },
