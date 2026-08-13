@@ -23,7 +23,7 @@ export function getSportData(slug: string) {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard";
     title = "WNBA 🏀"; // Custom title
-  } } else if (slug === "fiba") {
+  } else if (slug === "fiba") {
     apiUrl =
       "https://site.api.espn.com/apis/site/v2/sports/basketball/fiba/scoreboard";
     title = "FIBA";
