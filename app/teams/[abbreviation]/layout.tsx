@@ -10,14 +10,14 @@ export const viewport: Viewport = {
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function abbreviationLayout({
+export default async function abbreviationLayout({
   children,
   params, // Next.js passes the dynamic route parameters here
 }: {
   children: React.ReactNode;
-  params: { abbreviation: string }; // Define the type of params
+  params: Promise<{ abbreviation: string }>; // Define the type of params
 }) {
-  const { abbreviation } = params;
+  const { abbreviation } = await params;
 
   return (
     <html lang="en">

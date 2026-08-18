@@ -23,6 +23,9 @@ export async function generateMetadata({
     : "Minimalist Scoreboard";
 
   return {
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    ),
     title: pageTitle, // Dynamic title based on slug
     description:
       "Live sports scoreboard with real-time updates. Track ongoing games, view final scores, and see play updates. Simple, fast, and reliable. Just check the ScoreB.",
