@@ -5,7 +5,7 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     nba: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
-      title: "NBA 🏀",
+      title: "NBA",
     },
     ncaam: {
       apiUrl:
@@ -25,12 +25,12 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     wnba: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
-      title: "WNBA 🏀",
+      title: "WNBA",
     },
     fiba: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/basketball/fiba/scoreboard",
-      title: "FIBA",
+      title: "FIBA 🏀",
     },
     nbaSummer: {
       apiUrl:
@@ -41,45 +41,45 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     nfl: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
-      title: "NFL 🏈",
+      title: "NFL",
     },
     cfb: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
-      title: "College Football 🏈",
+      title: "College Football",
     },
     // Hockey
     nhl: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard",
-      title: "NHL 🏒",
+      title: "NHL",
     },
     OlympicHockey: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/hockey/olympics-mens-ice-hockey/scoreboard",
-      title: "Mens Ice Hockey 🏒",
+      title: "Mens Ice Hockey",
     },
     OlympicHockeyW: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/hockey/olympics-womens-ice-hockey/scoreboard",
-      title: "Womens Ice Hockey 🏒",
+      title: "Womens Ice Hockey",
     },
     // Baseball
     mlb: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
-      title: "MLB ⚾️",
+      title: "MLB",
     },
     ncaab: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/baseball/college-baseball/scoreboard",
-      title: "College Baseball ⚾️",
+      title: "College Baseball",
     },
     // Soccer - USA
     mls: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.1/scoreboard",
-      title: "MLS ⚽️",
+      title: "MLS",
     },
     open: {
       apiUrl:
@@ -89,7 +89,7 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     nwsl: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/usa.nwsl/scoreboard",
-      title: "NWSL ⚽️",
+      title: "NWSL",
     },
     ncaaSoccer: {
       apiUrl:
@@ -105,17 +105,17 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     club: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/club.friendly/scoreboard",
-      title: "Club Friendly ⚽️",
+      title: "Club Friendly",
     },
     bundesliga: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard",
-      title: "Bundesliga ⚽️",
+      title: "Bundesliga",
     },
     b2: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.2/scoreboard",
-      title: "2. Bundesliga ⚽️",
+      title: "2. Bundesliga",
     },
     germanCup: {
       apiUrl:
@@ -125,12 +125,12 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     epl: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
-      title: "English Premier League ⚽️",
+      title: "Premier League",
     },
     laliga: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",
-      title: "La Liga ⚽️",
+      title: "La Liga",
     },
     italyCup: {
       apiUrl:
@@ -141,22 +141,22 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     fifa: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard",
-      title: "FIFA Friendlies ⚽️",
+      title: "FIFA Friendlies",
     },
     fifaw: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly.w/scoreboard",
-      title: "FIFA Women's Friendlies ⚽️",
+      title: "FIFA Women's Friendlies",
     },
     cwc: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.cwc/scoreboard",
-      title: "FIFA Club World Cup ⚽️",
+      title: "FIFA Club World Cup",
     },
     worldcup: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-      title: "FIFA World Cup ⚽️",
+      title: "FIFA World Cup",
     },
     fifaconQ: {
       apiUrl:
@@ -192,12 +192,12 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     uefa: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard",
-      title: "UEFA Champions League ⚽️",
+      title: "UEFA Champions League",
     },
     uefaeu: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa/scoreboard",
-      title: "UEFA Europa League ⚽️",
+      title: "UEFA Europa League",
     },
     EUQual: {
       apiUrl:
@@ -207,28 +207,28 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     uefaNations: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.nations/scoreboard",
-      title: "UEFA Nations League ⚽️",
+      title: "UEFA Nations League",
     },
     // Soccer - CONCACAF
     concacaf: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.nations.league/scoreboard",
-      title: "Concacaf Nations League ⚽️",
+      title: "Concacaf Nations League",
     },
     concacafCup: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.champions/scoreboard",
-      title: "Concacaf Champions Cup ⚽️",
+      title: "Concacaf Champions Cup",
     },
     concacafLeagues: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.leagues.cup/scoreboard",
-      title: "Concacaf Leagues Cup ⚽️",
+      title: "Concacaf Leagues Cup",
     },
     concacafGold: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/concacaf.gold/scoreboard",
-      title: "Concacaf Gold Cup ⚽️",
+      title: "Concacaf Gold Cup",
     },
     // Volleyball
     volleyball: {
@@ -269,12 +269,12 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
     copaAmericaW: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.copa_america.w/scoreboard",
-      title: "Copa America Womens ⚽️",
+      title: "Copa America Womens",
     },
     copaAmericaU20: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.copa_america.u20/scoreboard",
-      title: "Copa America U20 ⚽️",
+      title: "Copa America U20",
     },
     italySerieA: {
       apiUrl:
