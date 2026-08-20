@@ -5,6 +5,17 @@ import { ChevronRight } from "lucide-react";
 
 // Import sports configuration
 const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> = {
+  // Football
+  nfl: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+    title: "NFL",
+  },
+  cfb: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+    title: "College Football",
+  },
   // Basketball
   nba: {
     apiUrl:
@@ -40,17 +51,6 @@ const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> = {
     apiUrl:
       "https://site.api.espn.com/apis/site/v2/sports/basketball/nba-summer/scoreboard",
     title: "NBA Summer League",
-  },
-  // Football
-  nfl: {
-    apiUrl:
-      "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
-    title: "NFL",
-  },
-  cfb: {
-    apiUrl:
-      "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
-    title: "College Football",
   },
   // Hockey
   nhl: {
@@ -129,6 +129,46 @@ const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> = {
     apiUrl:
       "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa_qual/scoreboard",
     title: "Europa League Qualifying",
+  },
+  UEFAChampQual: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions_qual/scoreboard",
+    title: "Champions League Qualifying",
+  },
+  copaAmerica: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.copa_america/scoreboard",
+    title: "Copa America",
+  },
+  EUFACONQ: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf_qual/scoreboard",
+    title: "Europa Conference League Qualifying",
+  },
+  EUFACON: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.europa.conf/scoreboard",
+    title: "Europa Conference League",
+  },
+  copaLibertadores: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/copa_libertadores/scoreboard",
+    title: "Copa Libertadores",
+  },
+  copaSudamericana: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/copa_sudamericana/scoreboard",
+    title: "Copa Sudamericana",
+  },
+  copaAmericaW: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.copa_america.w/scoreboard",
+    title: "Copa America Womens ⚽️",
+  },
+  copaAmericaU20: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.copa_america.u20/scoreboard",
+    title: "Copa America U20 ⚽️",
   },
   germanCup: {
     apiUrl:
@@ -220,6 +260,31 @@ const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> = {
     apiUrl:
       "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.coppa_italia/scoreboard",
     title: "Coppa Italiana",
+  },
+  italySerieA: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard",
+    title: "Serie A",
+  },
+  franceCup: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.coupe_de_france/scoreboard",
+    title: "Coupe de France",
+  },
+  franceLigue1: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard",
+    title: "Ligue 1",
+  },
+  spainCup: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.copa_del_rey/scoreboard",
+    title: "Copa del Rey",
+  },
+  portugalPrimeira: {
+    apiUrl:
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard",
+    title: "Primeira Liga",
   },
   ncaaSoccer: {
     apiUrl:
