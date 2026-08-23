@@ -22,16 +22,6 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
         "https://site.api.espn.com/apis/site/v2/sports/basketball/womens-college-basketball/scoreboard",
       title: "College Womens 🏀",
     },
-    wnba: {
-      apiUrl:
-        "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
-      title: "WNBA",
-    },
-    fiba: {
-      apiUrl:
-        "https://site.api.espn.com/apis/site/v2/sports/basketball/fiba/scoreboard",
-      title: "FIBA 🏀",
-    },
     nbaSummer: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/basketball/nba-summer/scoreboard",
@@ -300,6 +290,16 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard",
       title: "Primeira Liga",
+    }, 
+		wnba: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
+      title: "WNBA",
+    },
+    fiba: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/fiba/scoreboard",
+      title: "FIBA 🏀",
     },
   };
 
