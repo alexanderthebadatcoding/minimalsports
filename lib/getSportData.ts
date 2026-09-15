@@ -117,6 +117,11 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
         "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
       title: "Premier League",
     },
+    engCup: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.league_cup/scoreboard",
+      title: "England League Cup",
+    },
     laliga: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard",
