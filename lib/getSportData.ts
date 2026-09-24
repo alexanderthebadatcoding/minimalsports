@@ -1,6 +1,17 @@
 // lib/getSportData.ts
 export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
   {
+// Football
+    nfl: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+      title: "NFL",
+    },
+    cfb: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+      title: "College Football",
+    },
     // Basketball
     nba: {
       apiUrl:
@@ -27,17 +38,12 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
         "https://site.api.espn.com/apis/site/v2/sports/basketball/nba-summer/scoreboard",
       title: "NBA Summer League",
     },
-    // Football
-    nfl: {
+			wnba: {
       apiUrl:
-        "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
-      title: "NFL",
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
+      title: "WNBA",
     },
-    cfb: {
-      apiUrl:
-        "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
-      title: "College Football",
-    },
+    
     // Hockey
     nhl: {
       apiUrl:
@@ -296,15 +302,15 @@ export const SPORTS_CONFIG: Record<string, { apiUrl: string; title: string }> =
         "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard",
       title: "Primeira Liga",
     }, 
-		wnba: {
-      apiUrl:
-        "https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
-      title: "WNBA",
-    },
     fiba: {
       apiUrl:
         "https://site.api.espn.com/apis/site/v2/sports/basketball/fiba/scoreboard",
       title: "FIBA 🏀",
+    },
+		euroLeague: {
+      apiUrl:
+        "https://site.api.espn.com/apis/site/v2/sports/basketball/euroleague/scoreboard",
+      title: "Euro League 🏀",
     },
   };
 
