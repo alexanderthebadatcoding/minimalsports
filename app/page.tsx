@@ -11,7 +11,9 @@ async function hasRecentOrUpcomingEvents(apiUrl: string): Promise<boolean> {
 
     const data = await response.json();
     const now = new Date();
-    const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+    // const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+		const twoWeeksAgo = new Date();
+		twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
     const oneMonthFromNow = new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000); // change to 15 days 
 
     // Check for events in the API response (past 2 weeks or next month)
